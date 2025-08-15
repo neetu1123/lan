@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ole Ike Bay - Luxury Villa Rentals</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dynalight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --btn-color: #53008c;
+        --white-color: #ffffff;
+        --primary-font: "Montserrat", sans-serif;
+        --f14: 14px;
+        --p12: 12px;
+        --p15: 15px;
+        --background-light: #f8f9fa;
+        --text-dark: #2c3e50;
+        --grey-dark: #666;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oranienbaum", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Styles */
+      .header {
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 1.5rem 0;
+        transition: all 0.3s ease;
+      }
+
+      /* Add a scrolled class that will be toggled with JavaScript */
+      /* .header.scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        padding: 1rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      } */
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        height: 100px;
+        transition: all 0.3s ease;
+      }
+
+      .logo img {
+        filter: brightness(0) invert(1); /* Makes the logo white */
+        transition: all 0.3s ease;
+      }
+
+      .header.scrolled .logo img {
+        filter: none; /* Return to original color when scrolled */
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .phone {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .header.scrolled .phone {
+        color: #2c3e50;
+        text-shadow: none;
+      }
+
+      .menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .menu-btn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 5px 0;
+        transition: 0.3s;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+      }
+
+      .header.scrolled .menu-btn span {
+        background: #2c3e50;
+        box-shadow: none;
+      }
+
+      /* Sidebar Styles */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        width: 400px;
+        height: 100vh;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        color: white;
+        padding: 2rem;
+        transition: right 0.3s ease;
+        z-index: 1001;
+      }
+
+      .sidebar.active {
+        right: 0;
+      }
+
+      .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .sidebar-logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .sidebar-menu {
+        list-style: none;
+      }
+
+      .sidebar-menu li {
+        margin-bottom: 1.5rem;
+      }
+
+      .sidebar-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+      }
+
+      .sidebar-menu a:hover {
+        color: #74b9ff;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        position: relative;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        /* margin-bottom: 1rem; */
+        font-weight: 400;
+      }
+
+      .hero-content p {
+        font-size: 1.3rem;
+        max-width: 600px;
+        margin: 1rem auto;
+      }
+
+      /* Search Bar */
+      form.Search-bar {
+        position: relative;
+        margin: auto;
+        justify-content: center;
+        width: 90%;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        background: var(--white-color);
+        border-radius: 10px;
+        z-index: 2;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 12%);
+      }
+      .Search-bar label {
+        color: rgb(71, 71, 71);
+      }
+      form.Search-bar .col-3:first-child,
+      form.Search-bar .checkbar {
+        border-right: 1px solid #cccccc;
+        /* display: flex; */
+      }
+
+      form.Search-bar .col-3 {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .col-3 {
+        flex: 0 0 auto;
+        width: 25%;
+      }
+
+      .dropdown-box {
+        padding: 8px 0;
+        color: #333;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .dropdown-box .arrow {
+        float: right;
+        margin-right: 10px;
+      }
+
+      .check-in,
+      .check-out {
+        margin-bottom: 10px;
+      }
+
+      form.Search-bar input[type="text"] {
+        border: none;
+        padding: 8px 0;
+        width: 100%;
+        font-size: 1rem;
+        color: #333;
+        background: transparent;
+        outline: none;
+      }
+
+      .adult-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .adult-box button {
+        width: 30px;
+        height: 30px;
+        background-color: var(--btn-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .adult-box input {
+        width: 30px !important;
+        text-align: center;
+        margin: 0 10px;
+      }
+
+      .sub-btn {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 10px;
+      }
+      .search-field label {
+        display: block;
+        font-size: 0.8rem;
+        color: #666;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .search-field input,
+      .search-field select {
+        width: 100%;
+        border: none;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        color: #333;
+        background: transparent;
+        outline: none;
+      }
+
+      .guest-selector {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .guest-type {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .counter-btn {
+        background: var(--btn-color);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+      }
+
+      .counter-btn:hover {
+        background: #6b00b4;
+        transform: scale(1.1);
+      }
+
+      .main-btn {
+        font-weight: 700;
+        font-size: var(--f14);
+        color: var(--white-color);
+        background-color: var(--btn-color);
+        border: 0px solid var(--btn-color);
+        box-shadow: inset 0 0 0 0 #f6f6f9;
+        padding: var(--p12) var(--p15);
+        -webkit-transition: 0.5s;
+        -ms-transition: 0.5s;
+        transition: 0.5s;
+        font-family: var(--primary-font);
+        border-radius: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .main-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(83, 0, 140, 0.3);
+      }
+
+      .search-btn {
+        background-color: var(--btn-color);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .search-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(83, 0, 140, 0.3);
+      }
+
+      /* Properties Section */
+      .properties {
+        padding: 6rem 0;
+        background: #f8f9fa;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+        font-weight: 400;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 4rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .properties-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        /* max-width: 1000px; */
+        margin: 0 auto;
+      }
+
+      .property-card {
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        background: white;
+        position: relative;
+        height: 450px;
+      }
+
+      .property-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      }
+
+      .property-card.usa {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .property-card.anguilla {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .property-card.barbados {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .property-card.st-martin {
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .property-card h3 {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      /* Experience Section */
+      .experience {
+        padding: 6rem 0;
+        background: white;
+      }
+
+      .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+        margin-top: 4rem;
+      }
+
+      .experience-card {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 2.5rem;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.3s;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .experience-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(83, 0, 140, 0.1),
+          transparent
+        );
+        transform: rotate(-45deg);
+        transition: all 0.6s;
+        opacity: 0;
+      }
+
+      .experience-card:hover::before {
+        opacity: 1;
+        animation: shine 1.5s infinite;
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) translateY(-100%) rotate(-45deg);
+        }
+        100% {
+          transform: translateX(100%) translateY(100%) rotate(-45deg);
+        }
+      }
+
+      .experience-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--btn-color);
+        box-shadow: 0 15px 40px rgba(83, 0, 140, 0.2);
+      }
+
+      .experience-icon {
+        width: 60px;
+        height: 60px;
+        background-color: var(--btn-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+      }
+
+      .experience-card:hover .experience-icon {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
+      }
+
+      .experience-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+
+      .experience-card p {
+        color: #666;
+        line-height: 1.8;
+      }
+
+      /* CTA Section */
+      .cta {
+        padding: 6rem 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        color: white;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-weight: 400;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-btn {
+        background-color: var(--btn-color);
+        color: white;
+        padding: 1rem 3rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4);
+      }
+
+      /* Reviews Section */
+      .reviews {
+        padding: 6rem 0;
+        background: #e9ecef;
+      }
+
+      .reviews-carousel {
+        position: relative;
+        max-width: 100%;
+        margin: 4rem auto 0;
+        overflow: hidden;
+      }
+
+      .swiper-container {
+        width: 100%;
+        padding: 30px 0;
+      }
+
+      .swiper-wrapper {
+        display: flex;
+        align-items: stretch;
+        padding-bottom: 10px;
+      }
+
+      .swiper-slide {
+        height: auto;
+        display: flex;
+      }
+
+      .review-card {
+        width: 502px;
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        margin: 0 15px;
+        text-align: center;
+        position: relative;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+     
+
+      .quote-icon {
+        font-size: 3rem;
+        color: #667eea;
+        margin-bottom: 1rem;
+      }
+
+      .review-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 2rem;
+        font-style: italic;
+        flex-grow: 1;
+      }
+
+      .reviewer-name {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+
+      .review-location {
+        color: #999;
+        margin-bottom: 0.5rem;
+      }
+
+      .review-date {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: var(--btn-color);
+        background: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+        transition: all 0.3s;
+      }
+
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+        background: var(--btn-color);
+        color: white;
+        transform: scale(1.1);
+        /* box-shadow: 0 10px 30px rgba(83, 0, 140, 0.3); */
+      }
+
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .swiper-pagination-bullet {
+        background: var(--btn-color);
+        opacity: 0.5;
+        width: 12px;
+        height: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      /* About Section */
+      .about-section {
+        padding: 100px 0;
+        background-color: var(--background-light);
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .about-illustration {
+        flex: 1;
+        text-align: center;
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .about-text h2 {
+        font-size: 2.5rem;
+        color: var(--text-dark);
+        margin-bottom: 25px;
+        font-weight: 400;
+      }
+
+      .about-text h3 {
+        font-size: 1.5rem;
+        color: var(--grey-dark);
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+
+      .about-text p {
+        color: var(--grey-dark);
+        line-height: 1.8;
+        margin-bottom: 25px;
+        font-size: 1.05rem;
+      }
+
+      .learn-more {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 5px;
+      }
+
+      .learn-more:hover {
+        color: var(--grey-dark);
+        border-bottom: 1px solid var(--grey-dark);
+        transform: translateX(5px);
+      }
+
+      /* Benefits Section */
+      .benefits {
+        position: relative;
+        min-height: 400px;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+      }
+
+      .benefits-overlay {
+        width: 100%;
+        padding: 4rem 0;
+      }
+
+      .benefits-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 3rem;
+        font-weight: 400;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        max-width: 900px;
+        margin: 0 auto 3rem;
+      }
+
+      .benefit-item {
+        text-align: center;
+        color: white;
+      }
+
+      .benefit-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        transition: all 0.3s;
+      }
+
+      .benefit-icon:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+      }
+
+      .benefit-item h3 {
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .book-now-btn {
+        display: block;
+        margin: 0 auto;
+        background-color: var(--btn-color);
+        color: white;
+        padding: 1rem 3rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .book-now-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4);
+      }
+
+      /* Attractions Section */
+      .attractions {
+        padding: 6rem 0;
+        background: #f8f9fa;
+      }
+
+      .attractions-subtitle {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #ff7043;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .attractions-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 4rem;
+      }
+
+      .attraction-card {
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .attraction-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .attraction-card img {
+        transition: transform 0.5s ease;
+      }
+
+      .attraction-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .attraction-card.dining {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .attraction-card.places {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .attraction-card.activities {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .attraction-card.shopping {
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+          url("Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .attraction-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding: 3rem 2rem 2rem;
+        color: white;
+      }
+
+      .attraction-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      /* Footer */
+      .footer {
+        background: #f8f9fa;
+        padding: 4rem 0 0;
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .newsletter-section {
+        flex: 2;
+      }
+
+      .contact-section {
+        flex: 1;
+      }
+
+      .newsletter-section h3 {
+        color: #74b9ff;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+
+      .newsletter-section p {
+        color: #666;
+        margin-bottom: 2rem;
+        font-weight: 600;
+      }
+
+      .newsletter-form {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+      }
+
+      .form-input {
+        padding: 1rem;
+        border: 2px solid #e9ecef;
+        border-radius: 5px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      .form-input:focus {
+        border-color: #74b9ff;
+      }
+
+      .subscribe-btn {
+        background-color: var(--btn-color);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .subscribe-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
+      }
+
+      .contact-section h3 {
+        color: #74b9ff;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-section p {
+        color: #666;
+        margin-bottom: 2rem;
+        font-weight: 600;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-link {
+        width: 50px;
+        height: 50px;
+        background: var(--btn-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+      }
+
+      .social-link:hover {
+        background: #6b00b4;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
+      }
+
+      .footer-bottom {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 4rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-logo h4 {
+        color: #2c3e50;
+        font-size: 1.2rem;
+        margin: 0;
+      }
+
+      .footer-logo p {
+        color: #666;
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .footer-logo small {
+        color: #999;
+        font-size: 0.8rem;
+      }
+
+      .footer-description {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+      }
+
+      .footer-book-btn {
+        background-color: var(--btn-color);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .footer-book-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
+      }
+
+      .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .footer-column h4 {
+        color: #74b9ff;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .footer-column ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-column ul li a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-column ul li a:hover {
+        color: #74b9ff;
+      }
+
+      .footer-column ul li a::before {
+        content: "▶ ";
+        color: #ccc;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+      }
+
+      .contact-info p {
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
+
+      .badges {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .badges img {
+        border-radius: 5px;
+      }
+
+      .footer-copyright {
+        background-color: var(--btn-color);
+        color: white;
+        padding: 1.5rem 0;
+      }
+
+      .copyright-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .developer-link {
+        color: #ffd54f;
+        font-weight: 600;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 100vw;
+          right: -100vw;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .search-bar {
+          flex-direction: column;
+          margin: 0 20px;
+        }
+
+        .search-field {
+          min-width: auto;
+        }
+
+        .guest-selector {
+          justify-content: space-between;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .properties-grid {
+          grid-template-columns: 1fr;
+          padding: 0 20px;
+        }
+
+        .experience-grid {
+          grid-template-columns: 1fr;
+          padding: 0 20px;
+        }
+      }
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .sidebar {
+          width: 100vw;
+          right: -100vw;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .search-bar {
+          flex-direction: column;
+          margin: 0 20px;
+        }
+
+        .search-field {
+          min-width: auto;
+        }
+
+        .guest-selector {
+          justify-content: space-between;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .properties-grid {
+          grid-template-columns: 1fr;
+          padding: 0 20px;
+        }
+
+        .experience-grid {
+          grid-template-columns: 1fr;
+          padding: 0 20px;
+        }
+
+        .cta h2 {
+          font-size: 2rem;
+          padding: 0 20px;
+        }
+
+        .benefits-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 0 20px;
+        }
+
+        .benefits-title {
+          font-size: 2rem;
+          padding: 0 20px;
+        }
+
+        .attractions-grid {
+          grid-template-columns: 1fr;
+          padding: 0 20px;
+        }
+
+        .attraction-card {
+          height: 300px;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .newsletter-form {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .footer-bottom {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .footer-links {
+          grid-template-columns: 1fr;
+        }
+
+        .copyright-content {
+          flex-direction: column;
+          gap: 1rem;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .attractions-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .review-card {
+          width: 100%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .review-card {
+          width: 502px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img
+              src="ole-ike-white-2048x1325.png"
+              alt=""
+              class=""
+              style="height: 100%; width: auto"
+            />
+          </div>
+          <div class="header-right">
+            <a href="tel:+1-809-795-0054" class="phone"
+              ><i class="fas fa-phone me-1"></i> +1-809-795-0054</a
+            >
+            <button class="menu-btn" onclick="toggleSidebar()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">OLE IKE BAY</div>
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+      </div>
+      <ul class="sidebar-menu">
+        <li><a href="#home">Villa Collection</a></li>
+        <li><a href="#destinations">Destinations ▼</a></li>
+        <li><a href="#collection">Join our collection</a></li>
+        <li><a href="#management">Property management</a></li>
+        <li><a href="#golf">Golf</a></li>
+        <li><a href="#guides">Guides</a></li>
+        <li><a href="#service">Request service</a></li>
+        <li><a href="#about">About us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10 text-center">
+            <div class="hero-content">
+              <h1>Discover Paradise</h1>
+              <p>
+                Your gateway to elegance in the most sought-after locations in
+                the Caribbean
+              </p>
+
+              <!-- Search Bar -->
+              <form class="Search-bar">
+                <div class="row">
+                  <div class="form-group col-3 custom-location-dropdown" >
+                    <label for="locations">LOCATION</label><br />
+                    <div class="dropdown-box">
+                      Where do you want to go?<span class="arrow">▾</span>
+                    </div>
+                  </div>
+
+                  <div class="col-3 checkbar" style="display: flex">
+                    <div class="check-in">
+                      <label for="locations">CHECK-IN</label><br />
+                      <input
+                        type="text"
+                        name="checkin"
+                        placeholder="Add date"
+                        value=""
+                      />
+                    </div>
+                    <div class="check-out">
+                      <label for="locations">CHECK-OUT</label><br />
+                      <input
+                        type="text"
+                        name="checkout"
+                        placeholder="Add date"
+                        class="right"
+                        value=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col-2" style="display: inline-flex">
+                    <div class="people">
+                      <div class="adult">
+                        <label for="adult">ADULTS</label><br />
+                        <div class="adult-box">
+                          <button type="button" class="desc">-</button>
+                          <input
+                            type="text"
+                            name="adults"
+                            readonly=""
+                            value="1"
+                          />
+                          <button type="button" class="inc">+</button>
+                        </div>
+                      </div>
+                     
+                    </div>
+                  </div>
+                  <div class="col-2" style="display: inline-flex">
+                     <div class="Children">
+                        <label for="Children">CHILDREN</label><br />
+                        <div class="adult-box">
+                          <button type="button" class="desc">-</button>
+                          <input
+                            type="text"
+                            name="child"
+                            readonly=""
+                            value="0"
+                          />
+                          <button type="button" class="inc">+</button>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-2" style="display: flex
+;
+    justify-content: center;
+    align-items: center;">
+                    <div class="submit-btn">
+                      <button type="submit" class="main-btn">
+                        <i class="fas fa-search"></i> Search
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="properties">
+      <div class="container">
+        <h2 class="section-title">Unique homes, outstanding destinations</h2>
+        <p class="section-subtitle">
+          Welcome to Ole Ike Bay, your gateway to elegance in the most
+          sought-after locations in the Caribbean
+        </p>
+
+        <div class="properties-grid">
+          <div class="property-card">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt="United States Property"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.5)
+                );
+                z-index: 1;
+              "
+            ></div>
+            <h3 style="z-index: 2; position: relative">United States</h3>
+          </div>
+          <div class="property-card">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt="Anguilla Property"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.5)
+                );
+                z-index: 1;
+              "
+            ></div>
+            <h3 style="z-index: 2; position: relative">Anguilla</h3>
+          </div>
+          <div class="property-card">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt="Barbados Property"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.5)
+                );
+                z-index: 1;
+              "
+            ></div>
+            <h3 style="z-index: 2; position: relative">Barbados</h3>
+          </div>
+          <div class="property-card">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt="St. Martin Property"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.5)
+                );
+                z-index: 1;
+              "
+            ></div>
+            <h3 style="z-index: 2; position: relative">St. Martin</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience">
+      <div class="container">
+        <h2 class="section-title">The Ole Ike Bay experience</h2>
+
+        <div class="experience-grid">
+          <div class="experience-card">
+            <div class="experience-icon">🏠</div>
+            <h3>Curated collection</h3>
+            <p>
+              Enjoy a haven of luxury living with our thoughtfully curated villa
+              selection.
+            </p>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-icon">🌴</div>
+            <h3>Remarkable locations</h3>
+            <p>
+              Explore the hidden gems of the Caribbean in our stunning
+              locations.
+            </p>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-icon">🔒</div>
+            <h3>Confidentiality</h3>
+            <p>Ensure your privacy with the discreet service from our staff.</p>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-icon">✨</div>
+            <h3>Luxury amenities</h3>
+            <p>
+              Savor the lavish comforts of world-class amenities at your
+              fingertips.
+            </p>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-icon">🎨</div>
+            <h3>Trip designers</h3>
+            <p>
+              Immerse yourself in your dream holidays with our expert touch.
+            </p>
+          </div>
+
+          <div class="experience-card">
+            <div class="experience-icon">🏆</div>
+            <h3>Local expertise</h3>
+            <p>
+              Embark on a journey of discovery with our seasoned local
+              specialists.
+            </p>
+          </div>
+          <div class="experience-card">
+            <div class="experience-icon">🏆</div>
+            <h3>Local expertise</h3>
+            <p>
+              Embark on a journey of discovery with our seasoned local
+              specialists.
+            </p>
+          </div>
+          <div class="experience-card">
+            <div class="experience-icon">🏆</div>
+            <h3>Local expertise</h3>
+            <p>
+              Embark on a journey of discovery with our seasoned local
+              specialists.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container">
+      <div class="cta">
+        <h2>
+          Reach out to our trip designers and let us tailor your dream getaway
+        </h2>
+        <button class="main-btn cta-btn">Plan your trip</button>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+      <div class="container">
+        <h2 class="section-title">What our guests are saying</h2>
+
+        <div class="reviews-carousel">
+          <div class="swiper-container" id="reviewsSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="quote-icon">"</div>
+                  <p class="review-text">
+                    We loved every minute of our stay at the beautiful, designer
+                    appointed Arricefe Beach House. The only thing better than
+                    the house itself, was the wonderful people that took care of
+                    us 24/7. Melissa helped us to plan the most exquisite...
+                  </p>
+                  <div class="reviewer-name">Marine</div>
+                  <div class="review-location">Las Hamacas</div>
+                  <div class="review-date">2021-12-24</div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="quote-icon">"</div>
+                  <p class="review-text">
+                    Our trip was amazing! The house is incredible and walking
+                    out onto the golf course and beach was so nice. Melissa,
+                    Francisco, and the entire staff were incredible and took
+                    care of every little detail we could imagine, including
+                    leaving the resort for a great round of golf...
+                  </p>
+                  <div class="reviewer-name">Tom</div>
+                  <div class="review-location">Las Hamacas</div>
+                  <div class="review-date">2021-12-24</div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="quote-icon">"</div>
+                  <p class="review-text">
+                    I honestly don't know where to begin. If you are thinking
+                    about booking this villa STOP THINKING & DO IT! You will
+                    really regret it if you don't! The place exceeded our
+                    expectations by miles! (I cried at the goodbye I was soo
+                    happy with everything haha) The Villa is exactly as it...
+                  </p>
+                  <div class="reviewer-name">Towanda</div>
+                  <div class="review-location">Las Hamacas</div>
+                  <div class="review-date">2021-12-24</div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="quote-icon">"</div>
+                  <p class="review-text">
+                    What an amazing experience! The villa was absolutely
+                    stunning with breathtaking views. The staff was attentive
+                    and made our stay truly memorable. The private beach access
+                    was the highlight of our stay. We can't wait to come back
+                    next year.
+                  </p>
+                  <div class="reviewer-name">Michael</div>
+                  <div class="review-location">Blue Waters</div>
+                  <div class="review-date">2022-02-15</div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="quote-icon">"</div>
+                  <p class="review-text">
+                    Ole Ike Bay exceeded all expectations! From the moment we
+                    arrived, we were treated like royalty. The accommodations
+                    were luxurious, the food was exceptional, and the activities
+                    were endless. This is truly a gem in the Caribbean.
+                  </p>
+                  <div class="reviewer-name">Samantha</div>
+                  <div class="review-location">Palm Grove</div>
+                  <div class="review-date">2022-03-10</div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="quote-icon">"</div>
+                  <p class="review-text">
+                    Perfect getaway for our family vacation! The kids loved the
+                    pool and the adults enjoyed the spacious living areas. The
+                    concierge service was fantastic, helping us arrange tours
+                    and dinner reservations. Highly recommend for anyone looking
+                    for a luxury stay.
+                  </p>
+                  <div class="reviewer-name">Robert</div>
+                  <div class="review-location">Crystal Bay</div>
+                  <div class="review-date">2022-04-20</div>
+                </div>
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <div style="font-weight: bold; font-size: 1.5rem">About Us</div>
+            <h2 class="dynalight-regular">where nature meets luxury</h2>
+
+            <p>
+              Unwind at Ole Ike Bay. Our Home was created to be a place of
+              restoration, and relaxation, free of unnecessary clutter.
+            </p>
+            <p>
+              Experience the joys of recharging in nature without compromising
+              any comfort. The Manor House features outdoor dinning, outdoor
+              lounge chairs, kayaks, private beach, private dock and also
+              beautiful large verandas that wrap around this Manor House.
+            </p>
+            <a href="#" class="learn-more">
+              more about our amazing team <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="about-illustration">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt=""
+              class="img-fluid"
+              style="height: 450px; border-radius: 15px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+      <div class="benefits-overlay">
+        <div class="container">
+          <h2 class="benefits-title">Benefits Of Booking Direct</h2>
+
+          <div class="benefits-grid">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <path d="M14 2v6l3-3m0 6l-3-3"></path>
+                </svg>
+              </div>
+              <h3>Best Rates</h3>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  ></path>
+                </svg>
+              </div>
+              <h3>Relationship Building</h3>
+            </div>
+
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h3>Client Care</h3>
+            </div>
+          </div>
+
+          <button class="main-btn book-now-btn">Book Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section class="attractions">
+      <div class="container">
+        <p class="attractions-subtitle">
+          HAND-PICKED SELECTION OF QUALITY PLACES
+        </p>
+        <h2 class="section-title">Explore Attractions</h2>
+
+        <div class="attractions-grid">
+          <div class="attraction-card">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt="Dining"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div class="attraction-overlay" style="z-index: 2">
+              <h3>Dining</h3>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <img
+              src="Main-Page-1st-Image-scaled.jpg"
+              alt="Places To Visit"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div class="attraction-overlay" style="z-index: 2">
+              <h3>Places To Visit</h3>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt="Activities"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div class="attraction-overlay" style="z-index: 2">
+              <h3>Activities</h3>
+            </div>
+          </div>
+
+          <div class="attraction-card">
+            <img
+              src="Main-Page-1st-Image-scaled.jpg"
+              alt="Shopping"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div class="attraction-overlay" style="z-index: 2">
+              <h3>Shopping</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Newsletter Section -->
+          <div class="newsletter-section">
+            <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+            <p>
+              AND RECEIVE A PROMO CODE ON YOUR NEXT STAY WHEN YOU BOOK DIRECT
+            </p>
+
+            <div class="newsletter-form">
+              <div class="row g-3">
+                <div class="col-md-6 col-lg-3">
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    class="form-control form-input"
+                  />
+                </div>
+                <div class="col-md-6 col-lg-3">
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    class="form-control form-input"
+                  />
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    class="form-control form-input"
+                  />
+                </div>
+                <div class="col-md-6 col-lg-2">
+                  <button type="submit" class="main-btn subscribe-btn w-100">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Get in Touch Section -->
+          <div class="contact-section">
+            <h3>Get in Touch</h3>
+            <p>FOLLOW US ON SOCIAL MEDIA.</p>
+
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fas fa-phone"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-left">
+            <div class="footer-logo">
+              <img
+                src="ole-ike-white-2048x1325.png"
+                alt="Citrus & Serena Logo"
+                width="80"
+              />
+            </div>
+
+            <p class="footer-description">
+              We are a family-owned vacation rental business. Our homes are
+              designed to be your home away from home, offering comfort, luxury,
+              and exceptional hospitality for unforgettable trips and vacations.
+            </p>
+
+            <button class="main-btn footer-book-btn">Book Now</button>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Property Details</a></li>
+                <li><a href="#">Local Guide</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>Contact Info</h4>
+              <div class="contact-info">
+                <p>
+                  <i
+                    class="fas fa-map-marker-alt"
+                    style="color: var(--btn-color)"
+                  ></i>
+                  XYZ, XYZ
+                </p>
+                <p>
+                  <i class="fas fa-phone" style="color: var(--btn-color)"></i>
+                  +1 (844)460-8983
+                </p>
+                <p>
+                  <i
+                    class="fas fa-envelope"
+                    style="color: var(--btn-color)"
+                  ></i>
+                  hello@lan.com
+                </p>
+              </div>
+
+              <div class="badges">
+                <img
+                  src="image-removebg-preview.png"
+                  alt="Airbnb Superhost"
+                  width="120"
+                />
+                <img
+                  src="WhatsApp_Image_2025-08-13_at_10.00.03_PM__2_-removebg-preview.png"
+                  alt="VRBO Premier Host"
+                  width="120"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="copyright-content">
+            <p>Copyright © 2024 All Rights Reserved</p>
+            <!-- <p> -->
+            <!-- Designed & Developed by
+              <span class="developer-link">🎨 webdesignvr</span>
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+      // Sidebar functionality
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        sidebar.classList.toggle("active");
+        overlay.classList.toggle("active");
+      }
+
+      // Guest counter functionality
+      document.querySelectorAll(".inc").forEach((button) => {
+        button.addEventListener("click", function () {
+          const input = this.parentElement.querySelector("input");
+          let value = parseInt(input.value);
+          input.value = value + 1;
+        });
+      });
+
+      document.querySelectorAll(".desc").forEach((button) => {
+        button.addEventListener("click", function () {
+          const input = this.parentElement.querySelector("input");
+          let value = parseInt(input.value);
+          if (input.name === "adults") {
+            input.value = Math.max(1, value - 1);
+          } else {
+            input.value = Math.max(0, value - 1);
+          }
+        });
+      });
+
+      // Initialize Swiper for Reviews
+      const reviewsSwiper = new Swiper("#reviewsSwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        centeredSlides: false,
+        loop: true,
+        loopAdditionalSlides: 3,
+        grabCursor: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          // when window width is <= 768px
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          // when window width is <= 992px
+          992: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // when window width is > 1200px
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+      // Close sidebar when clicking outside
+      document.addEventListener("click", function (event) {
+        const sidebar = document.getElementById("sidebar");
+        const menuBtn = document.querySelector(".menu-btn");
+
+        if (
+          !sidebar.contains(event.target) &&
+          !menuBtn.contains(event.target)
+        ) {
+          sidebar.classList.remove("active");
+          document.getElementById("overlay").classList.remove("active");
+        }
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Initialize tooltips
+      const tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
