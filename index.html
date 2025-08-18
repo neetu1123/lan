@@ -262,7 +262,7 @@
         position: relative;
         margin: auto;
         justify-content: center;
-        width: 90%;
+        width: 100%;
         left: 0;
         right: 0;
         bottom: 0px;
@@ -481,7 +481,7 @@
         transition: transform 0.3s, box-shadow 0.3s;
         background: white;
         position: relative;
-        height: 450px;
+        height: 350px;
       }
 
       .property-card:hover {
@@ -534,16 +534,16 @@
 
       .experience-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(466px, 1fr));
         gap: 3rem;
         margin-top: 4rem;
       }
 
       .experience-card {
         background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 2.5rem;
+        padding: 1rem;
         border-radius: 20px;
-        text-align: center;
+        text-align: start;
         transition: all 0.3s;
         border: 2px solid transparent;
         position: relative;
@@ -589,23 +589,23 @@
       }
 
       .experience-icon {
-        width: 60px;
-        height: 60px;
-        background-color: var(--btn-color);
-        border-radius: 50%;
+        /* width: 60px; */
+        /* height: 60px; */
+        /* background-color: var(--btn-color); */
+        /* border-radius: 50%; */
         display: flex;
-        align-items: center;
-        justify-content: center;
+        /* align-items: start; */
+        justify-content: start;
         margin: 0 auto 1.5rem;
         color: white;
         font-size: 1.5rem;
         transition: all 0.3s;
       }
 
-      .experience-card:hover .experience-icon {
+      /* .experience-card:hover .experience-icon {
         transform: scale(1.1);
         box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
-      }
+      } */
 
       .experience-card h3 {
         font-size: 1.3rem;
@@ -691,7 +691,7 @@
       .review-card {
         width: 502px;
         background: white;
-        padding: 3rem;
+        padding: 1rem;
         border-radius: 20px;
         margin: 0 15px;
         text-align: center;
@@ -702,12 +702,10 @@
         flex: 1;
       }
 
-     
-
       .quote-icon {
         font-size: 3rem;
         color: #667eea;
-        margin-bottom: 1rem;
+        /* margin-bottom: 0.5rem; */
       }
 
       .review-text {
@@ -720,7 +718,7 @@
       }
 
       .reviewer-name {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 600;
         color: #2c3e50;
         margin-bottom: 0.5rem;
@@ -845,8 +843,11 @@
           url("Side-view-aerial-look-at-dock-scaled.jpg");
         background-size: cover;
         background-position: center;
+        background-attachment: fixed; /* This creates the parallax effect */
         display: flex;
         align-items: center;
+        /* Adding transition for smoother effect */
+        transition: background-position 0.5s ease-out;
       }
 
       .benefits-overlay {
@@ -864,10 +865,11 @@
 
       .benefits-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 4fr);
         gap: 3rem;
-        max-width: 900px;
+        /* max-width: 100px; */
         margin: 0 auto 3rem;
+        justify-content: center;
       }
 
       .benefit-item {
@@ -896,6 +898,29 @@
       .benefit-item h3 {
         font-size: 1.3rem;
         font-weight: 500;
+      }
+
+      /* Add fade-in animation for benefits content */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .benefits .container {
+        animation: fadeInUp 1s ease-out forwards;
+      }
+
+      /* Disable parallax on mobile for better performance */
+      @media (max-width: 768px) {
+        .benefits {
+          background-attachment: scroll;
+        }
       }
 
       .book-now-btn {
@@ -942,7 +967,7 @@
       }
 
       .attraction-card {
-        height: 400px;
+        height: 450px;
         border-radius: 20px;
         overflow: hidden;
         position: relative;
@@ -1028,7 +1053,7 @@
       }
 
       .newsletter-section {
-        flex: 2;
+        flex: 4;
       }
 
       .contact-section {
@@ -1055,7 +1080,7 @@
       }
 
       .form-input {
-        padding: 1rem;
+        padding: 0.6rem;
         border: 2px solid #e9ecef;
         border-radius: 5px;
         font-size: 1rem;
@@ -1071,7 +1096,7 @@
         background-color: var(--btn-color);
         color: white;
         border: none;
-        padding: 1rem 2rem;
+        padding: 0.6rem 2rem;
         border-radius: 5px;
         cursor: pointer;
         font-weight: 600;
@@ -1223,7 +1248,7 @@
       .badges {
         display: flex;
         gap: 1rem;
-        margin-top: 1rem;
+        margin-top: 2rem;
       }
 
       .badges img {
@@ -1456,7 +1481,7 @@
               <!-- Search Bar -->
               <form class="Search-bar">
                 <div class="row">
-                  <div class="form-group col-3 custom-location-dropdown" >
+                  <div class="form-group col-3 custom-location-dropdown">
                     <label for="locations">LOCATION</label><br />
                     <div class="dropdown-box">
                       Where do you want to go?<span class="arrow">▾</span>
@@ -1500,28 +1525,26 @@
                           <button type="button" class="inc">+</button>
                         </div>
                       </div>
-                     
                     </div>
                   </div>
                   <div class="col-2" style="display: inline-flex">
-                     <div class="Children">
-                        <label for="Children">CHILDREN</label><br />
-                        <div class="adult-box">
-                          <button type="button" class="desc">-</button>
-                          <input
-                            type="text"
-                            name="child"
-                            readonly=""
-                            value="0"
-                          />
-                          <button type="button" class="inc">+</button>
-                        </div>
+                    <div class="Children">
+                      <label for="Children">CHILDREN</label><br />
+                      <div class="adult-box">
+                        <button type="button" class="desc">-</button>
+                        <input type="text" name="child" readonly="" value="0" />
+                        <button type="button" class="inc">+</button>
                       </div>
+                    </div>
                   </div>
-                  <div class="col-2" style="display: flex
-;
-    justify-content: center;
-    align-items: center;">
+                  <div
+                    class="col-2"
+                    style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    "
+                  >
                     <div class="submit-btn">
                       <button type="submit" class="main-btn">
                         <i class="fas fa-search"></i> Search
@@ -1725,22 +1748,6 @@
               specialists.
             </p>
           </div>
-          <div class="experience-card">
-            <div class="experience-icon">🏆</div>
-            <h3>Local expertise</h3>
-            <p>
-              Embark on a journey of discovery with our seasoned local
-              specialists.
-            </p>
-          </div>
-          <div class="experience-card">
-            <div class="experience-icon">🏆</div>
-            <h3>Local expertise</h3>
-            <p>
-              Embark on a journey of discovery with our seasoned local
-              specialists.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -1902,7 +1909,7 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits">
+    <section class="benefits" data-parallax="true">
       <div class="benefits-overlay">
         <div class="container">
           <h2 class="benefits-title">Benefits Of Booking Direct</h2>
@@ -2319,6 +2326,40 @@
           header.classList.remove("scrolled");
         }
       });
+
+      // Enhanced parallax effect for benefits section
+      function handleParallax() {
+        // Check if the device is mobile (which might have performance issues with parallax)
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (!isMobile) {
+          const benefitsSection = document.querySelector(".benefits");
+          if (!benefitsSection) return;
+
+          window.addEventListener("scroll", () => {
+            // Get the scroll position
+            const scrollPosition = window.pageYOffset;
+            // Get the position of the benefits section
+            const benefitsSectionTop = benefitsSection.offsetTop;
+            const benefitsSectionHeight = benefitsSection.offsetHeight;
+
+            // Check if benefits section is in viewport
+            if (
+              scrollPosition + window.innerHeight > benefitsSectionTop &&
+              scrollPosition < benefitsSectionTop + benefitsSectionHeight
+            ) {
+              // Calculate the parallax offset (adjust the 0.4 value to control the speed)
+              const offset = (scrollPosition - benefitsSectionTop) * 0.4;
+
+              // Apply the parallax effect by moving the background position
+              benefitsSection.style.backgroundPosition = `center ${-offset}px`;
+            }
+          });
+        }
+      }
+
+      // Initialize parallax effect
+      document.addEventListener("DOMContentLoaded", handleParallax);
     </script>
   </body>
 </html>
