@@ -103,7 +103,7 @@
         font-size: 2rem;
         font-weight: bold;
         letter-spacing: 3px;
-        height: 100px;
+        height: 120px;
         transition: all 0.3s ease;
       }
 
@@ -125,7 +125,7 @@
       .phone {
         color: white;
         text-decoration: none;
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         transition: all 0.3s ease;
       }
@@ -179,7 +179,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 1.3rem;
+        /* margin-bottom: 1.3rem; */
       }
 
       .sidebar-logo {
@@ -414,7 +414,7 @@
         background-color: var(--btn-color);
         border: 0px solid var(--btn-color);
         box-shadow: inset 0 0 0 0 #f6f6f9;
-        padding: 12px 20px;
+        padding: 12px 30px;
         -webkit-transition: 0.5s;
         -ms-transition: 0.5s;
         transition: 0.5s;
@@ -426,7 +426,7 @@
 
       .main-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(83, 0, 140, 0.3);
+        /* box-shadow: 0 10px 20px rgba(83, 0, 140, 0.3); */
       }
 
       .search-btn {
@@ -568,9 +568,9 @@
       }
 
       .experience-card {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
         padding: 1rem;
-        border-radius: 20px;
+        /* border-radius: 20px; */
         text-align: start;
         transition: all 0.3s;
         border: 2px solid transparent;
@@ -607,10 +607,11 @@
         font-size: 1.3rem;
         margin-bottom: 1rem;
         color: #2c3e50;
+        font-weight: 800;
       }
 
       .experience-card p {
-        color: #666;
+        color: #333;
         line-height: 1.8;
       }
 
@@ -640,21 +641,38 @@
         background-color: var(--white-color);
         color: var(--btn-color);
         padding: 12px 15px;
-        border: none;
+        border: 1px solid #004369;
         border-radius: 7px;
         font-size: 14px;
         cursor: pointer;
-        transition: all 0.3s;
-        /* text-transform: uppercase; */
+        transition: all 0.5s ease-in-out;
         font-weight: 600;
-        /* letter-spacing: 1px; */
         margin-top: var(--m40);
         width: 150px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .cta-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: var(--btn-color);
+        transition: all 0.5s ease-in-out;
+        z-index: -1;
       }
 
       .cta-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4);
+        color: white;
+        /* box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4); */
+      }
+
+      .cta-btn:hover::before {
+        height: 100%;
       }
 
       /* Reviews Section */
@@ -930,22 +948,6 @@
       .book-now-btn {
         display: block;
         margin: 0 auto;
-        background-color: var(--btn-color);
-        color: white;
-        padding: 1rem 3rem;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: all 0.3s;
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 1px;
-      }
-
-      .book-now-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4);
       }
 
       /* Attractions Section */
@@ -1117,7 +1119,7 @@
         background-color: var(--btn-color);
         color: white;
         border: none;
-        padding: 0.6rem 2rem;
+        padding: 0.6rem 1rem;
         border-radius: 5px;
         cursor: pointer;
         font-weight: 600;
@@ -1251,7 +1253,7 @@
       }
 
       .footer-column ul li a {
-        color: #666;
+        color: #333;
         text-decoration: none;
         transition: color 0.3s;
         font-size: 14px;
@@ -1269,7 +1271,7 @@
       }
 
       .contact-info p {
-        color: #666;
+        color: #333;
         margin-bottom: 0.5rem;
         font-size: 14px;
       }
@@ -1287,7 +1289,7 @@
       .footer-copyright {
         background-color: var(--btn-color);
         color: white;
-        padding: 0.8rem 0;
+        padding-top: 1.5rem;
       }
 
       .copyright-content {
@@ -1491,7 +1493,14 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <div class="sidebar-logo">OLE IKE BAY</div>
+        <div class="logo">
+          <img
+            src="ole-ike-white-2048x1325.png"
+            alt=""
+            class=""
+            style="height: 100%; width: auto"
+          />
+        </div>
         <button class="close-btn" onclick="toggleSidebar()">×</button>
       </div>
       <ul class="sidebar-menu">
@@ -1533,7 +1542,10 @@
                     </div>
                   </div>
 
-                  <div class="col-3 checkbar" style="display: flex">
+                  <div
+                    class="col-4 checkbar"
+                    style="display: flex; justify-content: space-between"
+                  >
                     <div class="check-in">
                       <label for="locations">CHECK-IN</label><br />
                       <input
@@ -1555,9 +1567,12 @@
                     </div>
                   </div>
 
-                  <div class="col-2" style="display: inline-flex">
+                  <div
+                    class="col-3"
+                    style="display: flex; justify-content: space-between"
+                  >
                     <div class="people">
-                      <div class="adult">
+                      <div class="adult px-3">
                         <label for="adult">ADULTS</label><br />
                         <div class="adult-box">
                           <button type="button" class="desc">-</button>
@@ -1571,8 +1586,6 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-2" style="display: inline-flex">
                     <div class="Children">
                       <label for="Children">CHILDREN</label><br />
                       <div class="adult-box">
@@ -1582,6 +1595,9 @@
                       </div>
                     </div>
                   </div>
+                  <!-- <div class="col-2" style="display: inline-flex">
+                   
+                  </div> -->
                   <div
                     class="col-2 px-4"
                     style="
@@ -1778,6 +1794,39 @@
       </div>
     </section>
 
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <div style="font-weight: bold; font-size: 1.5rem">About Us</div>
+            <h2 class="dynalight-regular">where nature meets luxury</h2>
+
+            <p>
+              Unwind at Ole Ike Bay. Our Home was created to be a place of
+              restoration, and relaxation, free of unnecessary clutter.
+            </p>
+            <p>
+              Experience the joys of recharging in nature without compromising
+              any comfort. The Manor House features outdoor dinning, outdoor
+              lounge chairs, kayaks, private beach, private dock and also
+              beautiful large verandas that wrap around this Manor House.
+            </p>
+            <a href="#" class="learn-more">
+              more about our amazing team <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="about-illustration">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt=""
+              class="img-fluid"
+              style="height: 450px; border-radius: 15px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Reviews Section -->
     <section class="reviews">
       <div class="container">
@@ -1889,41 +1938,6 @@
         </div>
       </div>
     </section>
-
-    <!-- About Section -->
-    <section class="about-section">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <div style="font-weight: bold; font-size: 1.5rem">About Us</div>
-            <h2 class="dynalight-regular">where nature meets luxury</h2>
-
-            <p>
-              Unwind at Ole Ike Bay. Our Home was created to be a place of
-              restoration, and relaxation, free of unnecessary clutter.
-            </p>
-            <p>
-              Experience the joys of recharging in nature without compromising
-              any comfort. The Manor House features outdoor dinning, outdoor
-              lounge chairs, kayaks, private beach, private dock and also
-              beautiful large verandas that wrap around this Manor House.
-            </p>
-            <a href="#" class="learn-more">
-              more about our amazing team <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-          <div class="about-illustration">
-            <img
-              src="Side-view-aerial-look-at-dock-scaled.jpg"
-              alt=""
-              class="img-fluid"
-              style="height: 450px; border-radius: 15px"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Benefits Section -->
     <section class="benefits">
       <div class="benefits-overlay">
@@ -1984,7 +1998,7 @@
             </div>
           </div>
 
-          <button class="main-btn book-now-btn">Book Now</button>
+          <button class="main-btn book-now-btn cta-btn">Book Now</button>
         </div>
       </div>
     </section>
@@ -2155,7 +2169,7 @@
               and exceptional hospitality for unforgettable trips and vacations.
             </p>
 
-            <button class="main-btn footer-book-btn">Book Now</button>
+            <button class="main-btn  cta-btn">Book Now</button>
           </div>
 
           <div class="footer-links">
@@ -2215,10 +2229,10 @@
         <div class="container">
           <div class="copyright-content">
             <p>Copyright © 2024 All Rights Reserved</p>
-            <!-- <p> -->
-            <!-- Designed & Developed by
-              <span class="developer-link">🎨 webdesignvr</span>
-            </p> -->
+            <p>
+              Policy | Terms of Use | Privacy Policy | Cookie Policy
+              <!-- <span class="developer-link">🎨 webdesignvr</span> -->
+            </p>
           </div>
         </div>
       </div>
