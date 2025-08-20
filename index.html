@@ -854,11 +854,9 @@
           url("Side-view-aerial-look-at-dock-scaled.jpg");
         background-size: cover;
         background-position: center;
-        background-attachment: fixed; /* This creates the parallax effect */
+        background-attachment: scroll; /* Removed parallax effect */
         display: flex;
         align-items: center;
-        /* Adding transition for smoother effect */
-        transition: background-position 0.5s ease-out;
       }
 
       .benefits-overlay {
@@ -927,12 +925,7 @@
         animation: fadeInUp 1s ease-out forwards;
       }
 
-      /* Disable parallax on mobile for better performance */
-      @media (max-width: 768px) {
-        .benefits {
-          background-attachment: scroll;
-        }
-      }
+      /* Parallax effect removed */
 
       .book-now-btn {
         display: block;
@@ -1932,7 +1925,7 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits" data-parallax="true">
+    <section class="benefits">
       <div class="benefits-overlay">
         <div class="container">
           <h2 class="benefits-title">Benefits Of Booking Direct</h2>
@@ -2352,35 +2345,10 @@
         }
       });
 
-      // Enhanced parallax effect for benefits section
+      // Parallax effect removed for benefits section
       function handleParallax() {
-        // Check if the device is mobile (which might have performance issues with parallax)
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-        if (!isMobile) {
-          const benefitsSection = document.querySelector(".benefits");
-          if (!benefitsSection) return;
-
-          window.addEventListener("scroll", () => {
-            // Get the scroll position
-            const scrollPosition = window.pageYOffset;
-            // Get the position of the benefits section
-            const benefitsSectionTop = benefitsSection.offsetTop;
-            const benefitsSectionHeight = benefitsSection.offsetHeight;
-
-            // Check if benefits section is in viewport
-            if (
-              scrollPosition + window.innerHeight > benefitsSectionTop &&
-              scrollPosition < benefitsSectionTop + benefitsSectionHeight
-            ) {
-              // Calculate the parallax offset (adjust the 0.4 value to control the speed)
-              const offset = (scrollPosition - benefitsSectionTop) * 0.4;
-
-              // Apply the parallax effect by moving the background position
-              benefitsSection.style.backgroundPosition = `center ${-offset}px`;
-            }
-          });
-        }
+        // Function disabled - parallax effect removed
+        return;
       }
 
       // Initialize parallax effect
