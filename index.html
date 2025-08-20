@@ -1111,21 +1111,40 @@
       }
 
       .subscribe-btn {
-        background-color: var(--btn-color);
-        color: white;
-        border: none;
-        padding: 0.6rem 1rem;
-        border-radius: 5px;
+        background-color: var(--white-color);
+        color: var(--btn-color);
+        padding: 8px 15px;
+        border: 1px solid #004369;
+        border-radius: 7px;
+        font-size: 14px;
         cursor: pointer;
+        transition: all 0.5s ease-in-out;
         font-weight: 600;
-        transition: all 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        margin-top: var(--m40);
+        width: 150px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+.subscribe-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: var(--btn-color);
+        transition: all 0.5s ease-in-out;
+        z-index: -1;
       }
 
       .subscribe-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
+        color: white;
+        /* box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4); */
+      }
+
+      .subscribe-btn:hover::before {
+        height: 100%;
       }
 
       .contact-section h3 {
@@ -2223,7 +2242,7 @@
       <div class="footer-copyright">
         <div class="container">
           <div class="copyright-content">
-            <p>Copyright © 2024 All Rights Reserved</p>
+            <p>Copyright © 2025 All Rights Reserved</p>
             <p>
               Policy | Terms of Use | Privacy Policy | Cookie Policy
               <!-- <span class="developer-link">🎨 webdesignvr</span> -->
