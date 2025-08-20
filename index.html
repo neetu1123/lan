@@ -75,8 +75,12 @@
         left: 0;
         right: 0;
         z-index: 1000;
-        padding: 1.5rem 0;
+        /* padding: 1.5rem 0; */
         transition: all 0.3s ease;
+      }
+      ol,
+      ul {
+        padding-left: 0;
       }
 
       /* Add a scrolled class that will be toggled with JavaScript */
@@ -175,7 +179,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 2rem;
+        margin-bottom: 1.3rem;
       }
 
       .sidebar-logo {
@@ -188,7 +192,7 @@
         background: none;
         border: none;
         color: white;
-        font-size: 1.5rem;
+        font-size: 2rem;
         cursor: pointer;
         padding: 5px;
       }
@@ -198,7 +202,7 @@
       }
 
       .sidebar-menu li {
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.8rem;
       }
 
       .sidebar-menu a {
@@ -278,6 +282,7 @@
       form.Search-bar .checkbar {
         border-right: 1px solid #cccccc;
         /* display: flex; */
+        text-align: start;
       }
 
       form.Search-bar .col-3 {
@@ -293,7 +298,7 @@
       .dropdown-box {
         padding: 8px 0;
         color: #333;
-        font-size: 1rem;
+        font-size: 14px;
         cursor: pointer;
       }
 
@@ -305,11 +310,12 @@
       .check-in,
       .check-out {
         margin-bottom: 10px;
+        text-align: start;
       }
 
       form.Search-bar input[type="text"] {
         border: none;
-        padding: 8px 0;
+        padding: 3px 0;
         width: 100%;
         font-size: 1rem;
         color: #333;
@@ -324,11 +330,11 @@
       }
 
       .adult-box button {
-        width: 30px;
-        height: 30px;
-        background-color: var(--btn-color);
-        color: white;
-        border: none;
+        width: 25px;
+        height: 25px;
+        background-color: white;
+        color: var(--btn-color);
+        border: 1px solid var(--btn-color);
         border-radius: 50%;
         display: inline-flex;
         align-items: center;
@@ -408,13 +414,13 @@
         background-color: var(--btn-color);
         border: 0px solid var(--btn-color);
         box-shadow: inset 0 0 0 0 #f6f6f9;
-        padding: var(--p12) var(--p15);
+        padding: 12px 20px;
         -webkit-transition: 0.5s;
         -ms-transition: 0.5s;
         transition: 0.5s;
         font-family: var(--primary-font);
         border-radius: 5px;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         letter-spacing: 1px;
       }
 
@@ -458,12 +464,34 @@
 
       .section-subtitle {
         text-align: center;
-        font-size: 1.2rem;
-        color: #666;
+        font-size: 14px;
+        color: #333;
+        font-weight: 500px;
         margin-bottom: 4rem;
-        max-width: 600px;
+        line-height: 24px;
+        letter-spacing: 0.05em;
+        max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+      }
+      .properties .name {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        text-align: left;
+        padding: 15px 20px;
+        padding-top: 60px;
+        background: linear-gradient(
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.8)
+        );
+        border-radius: 0 0 10px 10px;
+        margin-bottom: 0;
+        color: white;
+        font-size: 24px;
+        font-weight: 500;
+        z-index: 2;
       }
 
       .properties-grid {
@@ -550,42 +578,10 @@
         overflow: hidden;
       }
 
-      .experience-card::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-          45deg,
-          transparent,
-          rgba(83, 0, 140, 0.1),
-          transparent
-        );
-        transform: rotate(-45deg);
-        transition: all 0.6s;
-        opacity: 0;
-      }
-
-      .experience-card:hover::before {
-        opacity: 1;
-        animation: shine 1.5s infinite;
-      }
-
-      @keyframes shine {
-        0% {
-          transform: translateX(-100%) translateY(-100%) rotate(-45deg);
-        }
-        100% {
-          transform: translateX(100%) translateY(100%) rotate(-45deg);
-        }
-      }
-
       .experience-card:hover {
         transform: translateY(-5px);
-        border-color: var(--btn-color);
-        box-shadow: 0 15px 40px rgba(83, 0, 140, 0.2);
+        /* border-color: var(--btn-color); */
+        /* box-shadow: 0 15px 40px rgba(83, 0, 140, 0.2); */
       }
 
       .experience-icon {
@@ -635,23 +631,25 @@
         font-size: 2.5rem;
         margin-bottom: 2rem;
         font-weight: 400;
-        max-width: 800px;
+        max-width: 850px;
         margin-left: auto;
         margin-right: auto;
       }
 
       .cta-btn {
-        background-color: var(--btn-color);
-        color: white;
-        padding: 1rem 3rem;
+        background-color: var(--white-color);
+        color: var(--btn-color);
+        padding: 12px 15px;
         border: none;
-        border-radius: 5px;
-        font-size: 1.1rem;
+        border-radius: 7px;
+        font-size: 14px;
         cursor: pointer;
         transition: all 0.3s;
-        text-transform: uppercase;
+        /* text-transform: uppercase; */
         font-weight: 600;
-        letter-spacing: 1px;
+        /* letter-spacing: 1px; */
+        margin-top: var(--m40);
+        width: 150px;
       }
 
       .cta-btn:hover {
@@ -668,13 +666,13 @@
       .reviews-carousel {
         position: relative;
         max-width: 100%;
-        margin: 4rem auto 0;
+        margin: 2rem auto 0;
         overflow: hidden;
       }
 
       .swiper-container {
         width: 100%;
-        padding: 30px 0;
+        padding: 30px 10px;
       }
 
       .swiper-wrapper {
@@ -691,7 +689,7 @@
       .review-card {
         width: 502px;
         background: white;
-        padding: 1rem;
+        padding: 2rem;
         border-radius: 20px;
         margin: 0 15px;
         text-align: center;
@@ -705,14 +703,16 @@
       .quote-icon {
         font-size: 3rem;
         color: #667eea;
-        /* margin-bottom: 0.5rem; */
+        line-height: 1;
+        height: 50px;
+        display: block;
       }
 
       .review-text {
-        font-size: 1.1rem;
+        font-size: 14px;
         line-height: 1.8;
         color: #555;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
         font-style: italic;
         flex-grow: 1;
       }
@@ -727,22 +727,33 @@
       .review-location {
         color: #999;
         margin-bottom: 0.5rem;
+        font-size: 13px;
       }
 
       .review-date {
         color: #666;
-        font-size: 0.9rem;
+        font-size: 13px;
       }
 
       .swiper-button-next,
       .swiper-button-prev {
         color: var(--btn-color);
         background: white;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         transition: all 0.3s;
+        z-index: 10;
+      }
+
+      .swiper-button-prev {
+        left: 10px;
+      }
+
+      .swiper-button-next {
+        right: 10px;
+        z-index: 10;
       }
 
       .swiper-button-next:hover,
@@ -750,12 +761,12 @@
         background: var(--btn-color);
         color: white;
         transform: scale(1.1);
-        /* box-shadow: 0 10px 30px rgba(83, 0, 140, 0.3); */
+        box-shadow: 0 10px 30px rgba(83, 0, 140, 0.3);
       }
 
       .swiper-button-next:after,
       .swiper-button-prev:after {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
       }
 
@@ -880,12 +891,12 @@
       .benefit-icon {
         width: 80px;
         height: 80px;
-        background: rgba(255, 255, 255, 0.2);
+        /* background: rgba(255, 255, 255, 0.2); */
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 1rem;
+        margin: auto;
         transition: all 0.3s;
       }
 
@@ -953,7 +964,7 @@
       .attractions-subtitle {
         text-align: center;
         font-size: 0.9rem;
-        color: #ff7043;
+        /* color: #ff7043; */
         letter-spacing: 2px;
         margin-bottom: 1rem;
         font-weight: 600;
@@ -1023,18 +1034,23 @@
 
       .attraction-overlay {
         position: absolute;
-        bottom: 0;
+        top: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-        padding: 3rem 2rem 2rem;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), transparent);
+        padding: 2rem 2rem 3rem;
         color: white;
+        z-index: 2;
       }
 
       .attraction-card h3 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         font-weight: 600;
         margin: 0;
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
       }
 
       /* Footer */
@@ -1058,6 +1074,18 @@
 
       .contact-section {
         flex: 1;
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .contact-section::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background: rgb(209, 206, 206);
       }
 
       .newsletter-section h3 {
@@ -1080,7 +1108,7 @@
       }
 
       .form-input {
-        padding: 0.6rem;
+        padding: 0.5rem;
         border: 2px solid #e9ecef;
         border-radius: 5px;
         font-size: 1rem;
@@ -1122,6 +1150,10 @@
         font-weight: 600;
       }
 
+      .contact-content {
+        padding-left: 1rem;
+      }
+
       .social-links {
         display: flex;
         gap: 1rem;
@@ -1130,12 +1162,13 @@
       .social-link {
         width: 50px;
         height: 50px;
-        background: var(--btn-color);
+        background: white;
+        border: 1px solid var(--btn-color);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
+        color: var(--btn-color);
         text-decoration: none;
         font-size: 1.5rem;
         transition: all 0.3s;
@@ -1144,6 +1177,7 @@
       .social-link:hover {
         background: #6b00b4;
         transform: translateY(-3px);
+        color: white;
         box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
       }
 
@@ -1211,7 +1245,7 @@
       .footer-column h4 {
         color: #74b9ff;
         margin-bottom: 1rem;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
       }
 
       .footer-column ul {
@@ -1227,6 +1261,7 @@
         color: #666;
         text-decoration: none;
         transition: color 0.3s;
+        font-size: 14px;
       }
 
       .footer-column ul li a:hover {
@@ -1236,18 +1271,19 @@
       .footer-column ul li a::before {
         content: "▶ ";
         color: #ccc;
-        font-size: 0.8rem;
+        font-size: 14px;
         margin-right: 0.5rem;
       }
 
       .contact-info p {
         color: #666;
         margin-bottom: 0.5rem;
+        font-size: 14px;
       }
 
       .badges {
         display: flex;
-        gap: 1rem;
+        gap: 2rem;
         margin-top: 2rem;
       }
 
@@ -1258,7 +1294,7 @@
       .footer-copyright {
         background-color: var(--btn-color);
         color: white;
-        padding: 1.5rem 0;
+        padding: 0.8rem 0;
       }
 
       .copyright-content {
@@ -1378,6 +1414,17 @@
           gap: 2rem;
         }
 
+        .contact-section {
+          padding-left: 0;
+          padding-top: 2rem;
+          margin-top: 1rem;
+          border-top: 1px solid #000000;
+        }
+
+        .contact-section::before {
+          display: none;
+        }
+
         .newsletter-form {
           grid-template-columns: 1fr;
           gap: 1rem;
@@ -1413,6 +1460,11 @@
         .review-card {
           width: 502px;
         }
+      }
+      label {
+        font-size: 10px;
+        font-weight: 700;
+        color: black;
       }
     </style>
   </head>
@@ -1451,7 +1503,7 @@
       </div>
       <ul class="sidebar-menu">
         <li><a href="#home">Villa Collection</a></li>
-        <li><a href="#destinations">Destinations ▼</a></li>
+        <li><a href="#destinations">Destinations</a></li>
         <li><a href="#collection">Join our collection</a></li>
         <li><a href="#management">Property management</a></li>
         <li><a href="#golf">Golf</a></li>
@@ -1481,7 +1533,7 @@
               <!-- Search Bar -->
               <form class="Search-bar">
                 <div class="row">
-                  <div class="form-group col-3 custom-location-dropdown">
+                  <div class="form-group col-3 custom-location-dropdown px-4">
                     <label for="locations">LOCATION</label><br />
                     <div class="dropdown-box">
                       Where do you want to go?<span class="arrow">▾</span>
@@ -1538,10 +1590,10 @@
                     </div>
                   </div>
                   <div
-                    class="col-2"
+                    class="col-2 px-4"
                     style="
                       display: flex;
-                      justify-content: center;
+                      justify-content: end;
                       align-items: center;
                     "
                   >
@@ -1597,7 +1649,7 @@
                 z-index: 1;
               "
             ></div>
-            <h3 style="z-index: 2; position: relative">United States</h3>
+            <p class="name text-white">United States</p>
           </div>
           <div class="property-card">
             <img
@@ -1627,38 +1679,9 @@
                 z-index: 1;
               "
             ></div>
-            <h3 style="z-index: 2; position: relative">Anguilla</h3>
+            <p class="name text-white">Anguilla</p>
           </div>
-          <div class="property-card">
-            <img
-              src="Side-view-aerial-look-at-dock-scaled.jpg"
-              alt="Barbados Property"
-              style="
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 0;
-              "
-            />
-            <div
-              style="
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background: linear-gradient(
-                  rgba(0, 0, 0, 0.3),
-                  rgba(0, 0, 0, 0.5)
-                );
-                z-index: 1;
-              "
-            ></div>
-            <h3 style="z-index: 2; position: relative">Barbados</h3>
-          </div>
+
           <div class="property-card">
             <img
               src="Side-view-aerial-look-at-dock-scaled.jpg"
@@ -1687,7 +1710,7 @@
                 z-index: 1;
               "
             ></div>
-            <h3 style="z-index: 2; position: relative">St. Martin</h3>
+            <p class="name text-white">St. Martin</p>
           </div>
         </div>
       </div>
@@ -1765,14 +1788,14 @@
     <!-- Reviews Section -->
     <section class="reviews">
       <div class="container">
-        <h2 class="section-title">What our guests are saying</h2>
+        <h2 class="section-title">What Our Guests Are Saying</h2>
 
         <div class="reviews-carousel">
           <div class="swiper-container" id="reviewsSwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="review-card">
-                  <div class="quote-icon">"</div>
+                  <div class="quote-icon">&ldquo;</div>
                   <p class="review-text">
                     We loved every minute of our stay at the beautiful, designer
                     appointed Arricefe Beach House. The only thing better than
@@ -1787,7 +1810,7 @@
 
               <div class="swiper-slide">
                 <div class="review-card">
-                  <div class="quote-icon">"</div>
+                  <div class="quote-icon">&ldquo;</div>
                   <p class="review-text">
                     Our trip was amazing! The house is incredible and walking
                     out onto the golf course and beach was so nice. Melissa,
@@ -1803,7 +1826,7 @@
 
               <div class="swiper-slide">
                 <div class="review-card">
-                  <div class="quote-icon">"</div>
+                  <div class="quote-icon">&ldquo;</div>
                   <p class="review-text">
                     I honestly don't know where to begin. If you are thinking
                     about booking this villa STOP THINKING & DO IT! You will
@@ -1819,7 +1842,7 @@
 
               <div class="swiper-slide">
                 <div class="review-card">
-                  <div class="quote-icon">"</div>
+                  <div class="quote-icon">&ldquo;</div>
                   <p class="review-text">
                     What an amazing experience! The villa was absolutely
                     stunning with breathtaking views. The staff was attentive
@@ -1835,7 +1858,7 @@
 
               <div class="swiper-slide">
                 <div class="review-card">
-                  <div class="quote-icon">"</div>
+                  <div class="quote-icon">&ldquo;</div>
                   <p class="review-text">
                     Ole Ike Bay exceeded all expectations! From the moment we
                     arrived, we were treated like royalty. The accommodations
@@ -1850,7 +1873,7 @@
 
               <div class="swiper-slide">
                 <div class="review-card">
-                  <div class="quote-icon">"</div>
+                  <div class="quote-icon">&ldquo;</div>
                   <p class="review-text">
                     Perfect getaway for our family vacation! The kids loved the
                     pool and the adults enjoyed the spacious living areas. The
@@ -1996,7 +2019,7 @@
                 z-index: 0;
               "
             />
-            <div class="attraction-overlay" style="z-index: 2">
+            <div class="attraction-overlay">
               <h3>Dining</h3>
             </div>
           </div>
@@ -2015,7 +2038,7 @@
                 z-index: 0;
               "
             />
-            <div class="attraction-overlay" style="z-index: 2">
+            <div class="attraction-overlay">
               <h3>Places To Visit</h3>
             </div>
           </div>
@@ -2034,7 +2057,7 @@
                 z-index: 0;
               "
             />
-            <div class="attraction-overlay" style="z-index: 2">
+            <div class="attraction-overlay">
               <h3>Activities</h3>
             </div>
           </div>
@@ -2053,7 +2076,7 @@
                 z-index: 0;
               "
             />
-            <div class="attraction-overlay" style="z-index: 2">
+            <div class="attraction-overlay">
               <h3>Shopping</h3>
             </div>
           </div>
@@ -2106,17 +2129,19 @@
 
           <!-- Get in Touch Section -->
           <div class="contact-section">
-            <h3>Get in Touch</h3>
-            <p>FOLLOW US ON SOCIAL MEDIA.</p>
+            <div class="contact-content">
+              <h3>Get in Touch</h3>
+              <p>FOLLOW US ON SOCIAL MEDIA.</p>
 
-            <div class="social-links">
-              <a href="#" class="social-link"><i class="fas fa-phone"></i></a>
-              <a href="#" class="social-link"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="social-link"
-                ><i class="fab fa-instagram"></i
-              ></a>
+              <div class="social-links">
+                <a href="#" class="social-link"><i class="fas fa-phone"></i></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
