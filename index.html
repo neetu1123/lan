@@ -29,7 +29,12 @@
 
     <style>
       :root {
-        --btn-color: #53008c;
+        /* Brand Colors */
+        --btn-color: #1883b0; /* Primary color for buttons/icons */
+        --btn-hover-color: #0f5e80; /* Dark shade for button hover */
+        --accent-color: #53b8d5; /* For accents and highlights */
+
+        /* Keep existing colors for text and backgrounds */
         --white-color: #ffffff;
         --primary-font: "Montserrat", sans-serif;
         --f14: 14px;
@@ -103,7 +108,7 @@
         font-size: 2rem;
         font-weight: bold;
         letter-spacing: 3px;
-        height: 120px;
+        height: 60px;
         transition: all 0.3s ease;
       }
 
@@ -164,7 +169,7 @@
         right: -400px;
         width: 400px;
         height: 100vh;
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        background: linear-gradient(135deg, #1883b0 0%, #0f5e80 100%);
         color: white;
         padding: 2rem;
         transition: right 0.3s ease;
@@ -425,8 +430,8 @@
       }
 
       .main-btn:hover {
-        transform: translateY(-2px);
-        /* box-shadow: 0 10px 20px rgba(83, 0, 140, 0.3); */
+        /* transform: translateY(-2px); */
+        box-shadow: 0 10px 20px rgba(15, 94, 128, 0.3);
       }
 
       .search-btn {
@@ -554,6 +559,32 @@
         font-weight: 600;
       }
 
+      /* Property Note */
+      .property-note {
+        background-color: #f8f9fa;
+        border-left: 4px solid var(--btn-color);
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .property-note .note-icon {
+        color: var(--btn-color);
+        font-size: 20px;
+        margin-right: 15px;
+        margin-top: 3px;
+      }
+
+      .property-note p {
+        margin: 0;
+        color: #555;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
       /* Experience Section */
       .experience {
         padding: 6rem 0;
@@ -596,6 +627,11 @@
         color: white;
         font-size: 1.5rem;
         transition: all 0.3s;
+      }
+
+      .experience-icon img.text-black {
+        filter: brightness(0);
+        transition: filter 0.3s ease;
       }
 
       /* .experience-card:hover .experience-icon {
@@ -661,17 +697,55 @@
         left: 0;
         width: 100%;
         height: 0;
-        background-color: var(--btn-color);
+        background-color: var(--btn-hover-color);
         transition: all 0.5s ease-in-out;
         z-index: -1;
       }
 
       .cta-btn:hover {
         color: white;
-        /* box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4); */
+        box-shadow: 0 10px 20px rgba(15, 94, 128, 0.4);
       }
 
       .cta-btn:hover::before {
+        height: 100%;
+      }
+
+      .cta-btn1 {
+        background-color: var(--btn-color);
+        color: var(--white-color);
+        padding: 12px 15px;
+        /* border: 1px solid #004369; */
+        border-radius: 7px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        font-weight: 600;
+        margin-top: var(--m40);
+        width: 150px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .cta-btn1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: var(--white-color);
+        transition: all 0.5s ease-in-out;
+        z-index: -1;
+      }
+
+      .cta-btn1:hover {
+        color: var(--btn-color);
+        /* box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4); */
+      }
+
+      .cta-btn1:hover::before {
         height: 100%;
       }
 
@@ -720,7 +794,7 @@
 
       .quote-icon {
         font-size: 3rem;
-        color: #667eea;
+        color: var(--btn-color);
         line-height: 1;
         height: 50px;
         display: block;
@@ -776,10 +850,10 @@
 
       .swiper-button-next:hover,
       .swiper-button-prev:hover {
-        background: var(--btn-color);
+        background: var(--btn-hover-color);
         color: white;
         transform: scale(1.1);
-        box-shadow: 0 10px 30px rgba(83, 0, 140, 0.3);
+        box-shadow: 0 10px 30px rgba(15, 94, 128, 0.3);
       }
 
       .swiper-button-next:after,
@@ -915,7 +989,6 @@
         margin: auto;
         transition: all 0.3s;
       }
-
 
       .benefit-item h3 {
         font-size: 1.3rem;
@@ -1079,7 +1152,7 @@
       }
 
       .newsletter-section h3 {
-        color: #74b9ff;
+        color: var(--btn-color);
         font-size: 1.5rem;
         margin-bottom: 1rem;
         letter-spacing: 1px;
@@ -1126,7 +1199,7 @@
         overflow: hidden;
         z-index: 1;
       }
-.subscribe-btn::before {
+      .subscribe-btn::before {
         content: "";
         position: absolute;
         top: 0;
@@ -1148,7 +1221,7 @@
       }
 
       .contact-section h3 {
-        color: #74b9ff;
+        color: var(--btn-color);
         font-size: 1.5rem;
         margin-bottom: 1rem;
       }
@@ -1184,10 +1257,10 @@
       }
 
       .social-link:hover {
-        background: #6b00b4;
+        background: var(--btn-hover-color);
         transform: translateY(-3px);
         color: white;
-        box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
+        box-shadow: 0 5px 15px rgba(15, 94, 128, 0.3);
       }
 
       .footer-bottom {
@@ -1252,7 +1325,7 @@
       }
 
       .footer-column h4 {
-        color: #74b9ff;
+        color: var(--btn-color);
         margin-bottom: 1rem;
         font-size: 1.5rem;
       }
@@ -1482,9 +1555,9 @@
     <header class="header">
       <div class="container-fluid">
         <div class="header-content">
-          <div class="logo">
+          <div class="logo my-3">
             <img
-              src="ole-ike-white-2048x1325.png"
+              src="ole-ike-white-2048x1325 (2) (1).png"
               alt=""
               class=""
               style="height: 100%; width: auto"
@@ -1507,9 +1580,9 @@
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
       <div class="sidebar-header">
-        <div class="logo">
+        <div class="logo mb-3">
           <img
-            src="ole-ike-white-2048x1325.png"
+            src="ole-ike-white-2048x1325 (2) (1).png"
             alt=""
             class=""
             style="height: 100%; width: auto"
@@ -1621,7 +1694,7 @@
                     "
                   >
                     <div class="submit-btn">
-                      <button type="submit" class="main-btn">
+                      <button type="submit" class="main-btn cta-btn1">
                         <i class="fas fa-search"></i> Search
                       </button>
                     </div>
@@ -1646,7 +1719,7 @@
         <div class="properties-grid">
           <div class="property-card">
             <img
-              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg"
               alt="United States Property"
               style="
                 width: 100%;
@@ -1672,11 +1745,11 @@
                 z-index: 1;
               "
             ></div>
-            <p class="name text-white">United States</p>
+            <p class="name text-white">4-bedroom (sleeps up to 9 guests)</p>
           </div>
           <div class="property-card">
             <img
-              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
               alt="Anguilla Property"
               style="
                 width: 100%;
@@ -1702,12 +1775,12 @@
                 z-index: 1;
               "
             ></div>
-            <p class="name text-white">Anguilla</p>
+            <p class="name text-white">2-bedroom (sleeps up to 5 guests)</p>
           </div>
 
           <div class="property-card">
             <img
-              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              src="WhatsApp Image 2025-08-21 at 6.55.54 PM.jpeg"
               alt="St. Martin Property"
               style="
                 width: 100%;
@@ -1733,8 +1806,22 @@
                 z-index: 1;
               "
             ></div>
-            <p class="name text-white">St. Martin</p>
+            <p class="name text-white">3-bedroom (sleeps up to 7 guests)</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Notes Section -->
+      <div class="container mt-4">
+        <div class="property-note">
+          <i class="fas fa-info-circle note-icon"></i>
+          <p>
+            <em
+              >All properties include the same amenities; the only difference is
+              the number of beds. Pricing varies accordingly. Each booked
+              property is exclusively yours.</em
+            >
+          </p>
         </div>
       </div>
     </section>
@@ -1746,7 +1833,9 @@
 
         <div class="experience-grid">
           <div class="experience-card">
-            <div class="experience-icon">🏠</div>
+            <div class="experience-icon">
+              <img src="65b89c7ecd147.webp" alt="" class="text-black" />
+            </div>
             <h3>Curated collection</h3>
             <p>
               Enjoy a haven of luxury living with our thoughtfully curated villa
@@ -1755,7 +1844,9 @@
           </div>
 
           <div class="experience-card">
-            <div class="experience-icon">🌴</div>
+            <div class="experience-icon">
+              <img src="65d39d8dcbccb.webp" alt="" class="text-black" />
+            </div>
             <h3>Remarkable locations</h3>
             <p>
               Explore the hidden gems of the Caribbean in our stunning
@@ -1764,13 +1855,17 @@
           </div>
 
           <div class="experience-card">
-            <div class="experience-icon">🔒</div>
+            <div class="experience-icon">
+              <img src="65d39d677dd69.webp" alt="" class="text-black"/>
+            </div>
             <h3>Confidentiality</h3>
             <p>Ensure your privacy with the discreet service from our staff.</p>
           </div>
 
           <div class="experience-card">
-            <div class="experience-icon">✨</div>
+            <div class="experience-icon">
+              <img src="65d39daab692a.webp" alt="" class="text-black" />
+            </div>
             <h3>Luxury amenities</h3>
             <p>
               Savor the lavish comforts of world-class amenities at your
@@ -1779,7 +1874,9 @@
           </div>
 
           <div class="experience-card">
-            <div class="experience-icon">🎨</div>
+            <div class="experience-icon">
+              <img src="65d39dd57a01e.webp" alt="" class="text-black"/>
+            </div>
             <h3>Trip designers</h3>
             <p>
               Immerse yourself in your dream holidays with our expert touch.
@@ -1787,7 +1884,9 @@
           </div>
 
           <div class="experience-card">
-            <div class="experience-icon">🏆</div>
+            <div class="experience-icon">
+              <img src="65d39d343d38e.webp" alt="" class="text-black"/>
+            </div>
             <h3>Local expertise</h3>
             <p>
               Embark on a journey of discovery with our seasoned local
@@ -2140,7 +2239,14 @@
                   />
                 </div>
                 <div class="col-md-6 col-lg-2">
-                  <button type="submit" class="main-btn subscribe-btn w-100">
+                  <button
+                    type="submit"
+                    class="main-btn subscribe-btn w-100"
+                    style="
+                      border: 3px solid var(--white);
+                      box-shadow: 0 4px 4px rgba(121, 119, 119, 0.2);
+                    "
+                  >
                     Subscribe
                   </button>
                 </div>
@@ -2171,9 +2277,10 @@
           <div class="footer-left">
             <div class="footer-logo">
               <img
-                src="ole-ike-white-2048x1325.png"
+                src="WhatsApp Image 2025-08-21 at 6.41.31 PM.jpeg"
                 alt="Citrus & Serena Logo"
-                width="80"
+                width="auto"
+                height="60px"
               />
             </div>
 
@@ -2183,7 +2290,15 @@
               and exceptional hospitality for unforgettable trips and vacations.
             </p>
 
-            <button class="main-btn  cta-btn">Book Now</button>
+            <button
+              class="main-btn cta-btn"
+              style="
+                border: 3px solid var(--white);
+                box-shadow: 0 4px 4px rgba(121, 119, 119, 0.2);
+              "
+            >
+              Book Now
+            </button>
           </div>
 
           <div class="footer-links">
