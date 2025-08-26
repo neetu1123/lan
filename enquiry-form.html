@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ole Ike Bay - Contact Form</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dynalight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* Brand Colors */
+        --btn-color: #1883b0; /* Primary color for buttons/icons */
+        --btn-hover-color: #0f5e80; /* Dark shade for button hover */
+        --accent-color: #53b8d5; /* For accents and highlights */
+        --primary-color: #6a0dad; /* Purple color for submit button */
+
+        /* Keep existing colors for text and backgrounds */
+        --white-color: #ffffff;
+        --primary-font: "Montserrat", sans-serif;
+        --f14: 14px;
+        --p12: 12px;
+        --p15: 15px;
+        --background-light: #f8f9fa;
+        --text-dark: #2c3e50;
+        --grey-dark: #000000;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: var(--background-light);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Oranienbaum", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .enquiry-section {
+        padding: 80px 0;
+      }
+
+      .enquiry-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+        color: var(--text-dark);
+      }
+
+      .form-container {
+        background-color: var(--white-color);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+      }
+
+      .form-label {
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 5px;
+      }
+
+      .form-control {
+        border: 1px solid #e2e2e2;
+        border-radius: 4px;
+        padding: 8px 15px;
+        height: auto;
+        transition: all 0.3s;
+        margin-bottom: 20px;
+      }
+
+      .form-control:focus {
+        border-color: var(--btn-color);
+        box-shadow: 0 0 0 0.25rem rgba(24, 131, 176, 0.25);
+      }
+
+      .form-select {
+        border: 1px solid #e2e2e2;
+        border-radius: 4px;
+        padding: 12px 15px;
+        height: auto;
+        transition: all 0.3s;
+        margin-bottom: 20px;
+      }
+
+      .form-select:focus {
+        border-color: var(--btn-color);
+        box-shadow: 0 0 0 0.25rem rgba(24, 131, 176, 0.25);
+      }
+
+      textarea.form-control {
+        min-height: 120px;
+      }
+
+      .form-check-input:checked {
+        background-color: var(--btn-color);
+        border-color: var(--btn-color);
+      }
+
+      .submit-btn {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-transform: none;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .submit-btn:hover {
+        background-color: #5a0b9a;
+        transform: translateY(-2px);
+      }
+
+      .contact-alternative {
+        text-align: center;
+        margin-top: 30px;
+        color: var(--text-dark);
+      }
+
+      .contact-link {
+        color: var(--btn-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      .contact-link:hover {
+        color: var(--btn-hover-color);
+        text-decoration: underline;
+      }
+
+      .asterisk {
+        color: var(--btn-color);
+        margin-left: 2px;
+      }
+
+      .date-inputs input[type="date"] {
+        background-color: white;
+        padding-right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .enquiry-title {
+          font-size: 2rem;
+        }
+
+        .form-container {
+          padding: 20px;
+        }
+
+        .enquiry-section {
+          padding: 60px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="enquiry-section">
+      <div class="container">
+        <h1 class="enquiry-title">
+          Enter your enquiry below to have your Ole ike bay Travel Advisor contact and
+          assist you
+        </h1>
+
+        <div class="form-container">
+          <form id="enquiryForm">
+            <div class="row ">
+              <div class="col-md-6">
+                <label for="destination" class="form-label">Destination</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="destination"
+                  placeholder="Destination"
+                  required
+                />
+              </div>
+              <div class="col-md-3">
+                <label for="arrivalDate" class="form-label">Arrival date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="arrivalDate"
+                  required
+                />
+              </div>
+              <div class="col-md-3">
+                <label for="departureDate" class="form-label"
+                  >Departure date</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="departureDate"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="row "></div>
+
+            <div class="row ">
+              <div class="col-md-6">
+                <label for="firstName" class="form-label"
+                  >First name<span class="asterisk">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="First Name"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="lastName" class="form-label"
+                  >Last name<span class="asterisk">*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Last Name"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <label for="email" class="form-label"
+                  >Email address<span class="asterisk">*</span></label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="row ">
+              <div class="col-md-12">
+                <label for="phone" class="form-label">Phone number</label>
+                <div class="input-group">
+                  <select class="form-select" style="max-width: 150px">
+                    <option selected>AF (+93)</option>
+                    <option>US (+1)</option>
+                    <option>UK (+44)</option>
+                    <option>CA (+1)</option>
+                    <option>AU (+61)</option>
+                    <!-- More options can be added -->
+                  </select>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Phone Number"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="message" class="form-label"
+                  >Message<span class="asterisk">*</span></label
+                >
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Let us know about your plans, your group and any special requirements so we can help tailor your stay."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="newsletterCheckbox"
+                  />
+                  <label class="form-check-label" for="newsletterCheckbox">
+                    Send me emails with travel inspiration and news about Ole ike bay.
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                <div class="col-md-3">
+                  <button type="submit" class="submit-btn">
+                    Submit enquiry
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-alternative">
+          <p>
+            Alternatively contact our Reservations Team directly
+            <br />
+            <a href="tel:+18097950054" class="contact-link">+1-809-795-0054</a>
+            or
+            <a href="mailto:hello@Ole ike bay.com" class="contact-link"
+              >hello@Ole ike bay.com</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Form validation script -->
+    <script>
+      // Simple form validation
+      const form = document.getElementById("enquiryForm");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Basic validation
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        if (firstName && lastName && email && message) {
+          // If form is valid, you would normally submit it
+          alert("Thank you for your enquiry. Our team will contact you soon.");
+          form.reset();
+        } else {
+          alert("Please fill in all required fields.");
+        }
+      });
+
+      // Set minimum date as today for arrival and departure
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("arrivalDate").setAttribute("min", today);
+      document.getElementById("departureDate").setAttribute("min", today);
+
+      // Make sure departure date is after arrival date
+      document
+        .getElementById("arrivalDate")
+        .addEventListener("change", function () {
+          const arrivalDate = this.value;
+          document
+            .getElementById("departureDate")
+            .setAttribute("min", arrivalDate);
+        });
+    </script>
+  </body>
+</html>
