@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book to Stay - Bentonville Lodging Company</title>
+    <!-- External CSS Libraries -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dynalight&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+  
+    <style>
+        /* Properties Section */
+.properties-section {
+    padding-bottom: 100px;
+    margin-top: 100px;
+    background: var(--background-light);
+}
+
+/* Initial state for animation */
+.property-card {
+    opacity: 0;
+    transform: translateY(2px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    color: var(--grey-dark);
+    font-size: 1rem;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.property-card {
+    /* background: var(--text-light); */
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.property-image {
+    height: 375px;
+    position: relative;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.property-content {
+    padding: 20px;
+    position: relative;
+}
+
+.property-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.property-description {
+    color: var(--grey-dark);
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.property-price {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.property-details {
+    display: flex;
+    gap: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    justify-content: space-between;
+}
+
+.property-detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+      /* Testimonials Section Styles */
+      .testimonials-section {
+        background-image: url("review_bg_2.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 70px 0px;
+        position: relative;
+        overflow: hidden;
+        color: var(--text-dark);
+        transition: background 0.3s, border 0.3s, border-radius 0.3s,
+          box-shadow 0.3s;
+        margin-top: 50px;
+        margin-bottom: 0px;
+      }
+
+      /* Apply a semi-transparent overlay to help with text readability */
+      .testimonials-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .section-title {
+        font-size: 3.2rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 30px;
+        line-height: 1.2;
+        font-family: "Playfair Display", serif;
+      }
+
+      .section-title .highlight {
+        color: var(--text-dark);
+        font-weight: 700;
+      }
+
+      .section-description {
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto 60px;
+      }
+
+      .testimonial-carousel {
+        padding: 20px 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .testimonial-card {
+        background: white;
+        padding: 30px 20px;
+        margin: 15px;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        border-radius: 15px;
+        z-index: 2;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .owner-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .owner-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: rgba(245, 245, 245, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-right: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .owner-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .owner-details h5 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin: 0;
+        font-family: "Playfair Display", serif;
+      }
+
+      .owner-role {
+        color: var(--text-dark);
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      .testimonial-text {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+        font-style: italic;
+        position: relative;
+      }
+
+      .testimonial-text::before {
+        content: '"';
+        font-size: 4rem;
+        color: rgba(0, 0, 0, 0.05);
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        font-family: "Playfair Display", serif;
+      }
+
+      .star-rating {
+        display: flex;
+        gap: 5px;
+        margin-top: 15px;
+        margin-top: auto;
+      }
+
+      .star {
+        color: #ff6b35;
+        font-size: 1rem;
+      }
+
+      .testimonials-container {
+        position: relative;
+        max-width: 1400px;
+        margin: 0 auto;
+        z-index: 2;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 992px) {
+        .testimonial-card {
+          margin: 10px;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .testimonial-card {
+          margin: 5px 0;
+          padding: 15px 10px;
+        }
+
+        .owner-info {
+          flex-direction: row;
+          align-items: center;
+        }
+
+        .owner-avatar {
+          width: 60px;
+          height: 60px;
+          margin-right: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .testimonials-section {
+          padding: 60px 0;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .section-description {
+          font-size: 1rem;
+          padding: 0 20px;
+        }
+
+        .testimonial-text {
+          font-size: 1rem;
+        }
+
+        .owner-details h5 {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+   
+     <!-- Properties Section -->
+    <section class="properties-section" id="properties">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Properties</h2>
+                <p class="section-subtitle">Where you stay matters; enjoy our hand-picked selection of places to stay in and around Bentonville, AR,</p>
+
+  <p class="section-subtitle"> that gives you access to world-class Mountain Biking, incredible dining, small-town charm, and more! From luxury to affordability find your base camp in Northwest Arkansas today!</p>
+            </div>
+            <div class="row">
+               <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="The Guesthouse">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">The Guesthouse</h3>
+                            <p class="property-description">Modern & Stylish Woodland Escape with Hot Tub and Treetop Views</p>
+                            <p class="property-price">Starting at $278 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="The Guesthouse">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">The Guesthouse</h3>
+                            <p class="property-description">Modern & Stylish Woodland Escape with Hot Tub and Treetop Views</p>
+                            <p class="property-price">Starting at $278 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="The Guesthouse">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">The Guesthouse</h3>
+                            <p class="property-description">Modern & Stylish Woodland Escape with Hot Tub and Treetop Views</p>
+                            <p class="property-price">Starting at $278 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="The Guesthouse">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">The Guesthouse</h3>
+                            <p class="property-description">Modern & Stylish Woodland Escape with Hot Tub and Treetop Views</p>
+                            <p class="property-price">Starting at $278 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="The Guesthouse">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">The Guesthouse</h3>
+                            <p class="property-description">Modern & Stylish Woodland Escape with Hot Tub and Treetop Views</p>
+                            <p class="property-price">Starting at $278 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="The Guesthouse">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">The Guesthouse</h3>
+                            <p class="property-description">Modern & Stylish Woodland Escape with Hot Tub and Treetop Views</p>
+                            <p class="property-price">Starting at $278 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>2 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+               
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="7th St. Trailhead">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">7th St. Trailhead</h3>
+                            <p class="property-description">Classic Farmhouse Charm with Gym, Music Den & Natural Views</p>
+                            <p class="property-price">Starting at $229 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>1.5 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="7th St. Trailhead">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">7th St. Trailhead</h3>
+                            <p class="property-description">Classic Farmhouse Charm with Gym, Music Den & Natural Views</p>
+                            <p class="property-price">Starting at $229 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>1.5 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg" alt="7th St. Trailhead">
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title">7th St. Trailhead</h3>
+                            <p class="property-description">Classic Farmhouse Charm with Gym, Music Den & Natural Views</p>
+                            <p class="property-price">Starting at $229 / night</p>
+                            <div class="property-details">
+                                <div class="property-detail">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Bentonville, Arkansas</span>
+                                </div>
+                            </div>
+                            <div class="property-details mt-3" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+                                <div class="property-detail">
+                                    <i class="fas fa-users"></i>
+                                    <span>6 guests</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bed"></i>
+                                    <span>3 beds</span>
+                                </div>
+                                <div class="property-detail">
+                                    <i class="fas fa-bath"></i>
+                                    <span>1.5 baths</span>
+                                </div>
+                            </div>
+                            <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="/propety.html" class="btn btn-outline-dark py-3 px-4">
+                    View All Properties <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+   
+  </body>
+</html>
