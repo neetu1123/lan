@@ -17,27 +17,24 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dynalight&display=swap"
-      rel="stylesheet"
-    />
+  
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
+ <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
   
     <style>
         /* Properties Section */
 .properties-section {
     padding-bottom: 100px;
     margin-top: 100px;
-    background: var(--background-light);
 }
 
 /* Initial state for animation */
 .property-card {
-    opacity: 0;
+    /* opacity: 0; */
     transform: translateY(2px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
@@ -63,7 +60,7 @@
 }
 
 .property-card {
-    /* background: var(--text-light); */
+    background: var(--text-light);
     border-radius: 12px;
     overflow: hidden;
     height: 100%;
@@ -133,8 +130,7 @@
         position: relative;
         overflow: hidden;
         color: var(--text-dark);
-        transition: background 0.3s, border 0.3s, border-radius 0.3s,
-          box-shadow 0.3s;
+        
         margin-top: 50px;
         margin-bottom: 0px;
       }
@@ -346,7 +342,9 @@
     </style>
   </head>
   <body>
-   
+      <!-- Include Header -->
+    <div id="header-placeholder"></div>
+
      <!-- Properties Section -->
     <section class="properties-section" id="properties">
         <div class="container">
@@ -659,7 +657,7 @@
                 </div>
             </div>
             <div class="text-center mt-5">
-                <a href="/propety.html" class="btn btn-outline-dark py-3 px-4">
+                <a href="/property-detail.html" class="btn btn-outline-dark py-3 px-4">
                     View All Properties <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
@@ -672,6 +670,37 @@
     <!-- JavaScript Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-   
+    <!-- Script to load header and footer -->
+    <script>
+      // Load Header
+      fetch("includes/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+
+      // Load Footer
+      fetch("includes/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+
+      // Function to toggle sidebar
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+        document.getElementById("overlay").classList.toggle("active");
+      }
+
+      // Add scroll event listener to handle header style changes
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
   </body>
 </html>

@@ -26,7 +26,8 @@
       href="https://fonts.googleapis.com/css2?family=Dynalight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
     <style>
       :root {
         /* Brand Colors */
@@ -412,28 +413,6 @@
         transform: scale(1.1);
       }
 
-      .main-btn {
-        font-weight: 700;
-        font-size: var(--f14);
-        color: var(--white-color);
-        background-color: var(--btn-color);
-        border: 0px solid var(--btn-color);
-        box-shadow: inset 0 0 0 0 #f6f6f9;
-        padding: 12px 30px;
-        -webkit-transition: 0.5s;
-        -ms-transition: 0.5s;
-        transition: 0.5s;
-        font-family: var(--primary-font);
-        border-radius: 5px;
-        /* text-transform: uppercase; */
-        letter-spacing: 1px;
-      }
-
-      .main-btn:hover {
-        /* transform: translateY(-2px); */
-        box-shadow: 0 10px 20px rgba(15, 94, 128, 0.3);
-      }
-
       .search-btn {
         background-color: var(--btn-color);
         color: white;
@@ -682,44 +661,6 @@
         max-width: 850px;
         margin-left: auto;
         margin-right: auto;
-      }
-
-      .cta-btn {
-        background-color: var(--white-color);
-        color: var(--btn-color);
-        padding: 12px 15px;
-        border: 1px solid #004369;
-        border-radius: 7px;
-        font-size: 14px;
-        cursor: pointer;
-        transition: all 0.5s ease-in-out;
-        font-weight: 600;
-        margin-top: var(--m40);
-        width: 150px;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
-
-      .cta-btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background-color: var(--btn-hover-color);
-        transition: all 0.5s ease-in-out;
-        z-index: -1;
-      }
-
-      .cta-btn:hover {
-        color: white;
-        box-shadow: 0 10px 20px rgba(15, 94, 128, 0.4);
-      }
-
-      .cta-btn:hover::before {
-        height: 100%;
       }
 
       .cta-btn1 {
@@ -1127,280 +1068,6 @@
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
       }
 
-      /* Footer */
-      .footer {
-        background: #f8f9fa;
-        padding: 4rem 0 0;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        margin-bottom: 4rem;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid #e9ecef;
-      }
-
-      .newsletter-section {
-        flex: 4;
-      }
-
-      .contact-section {
-        flex: 1;
-        position: relative;
-        padding-left: 2rem;
-      }
-
-      .contact-section::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 1px;
-        background: rgb(209, 206, 206);
-      }
-
-      .newsletter-section h3 {
-        color: var(--btn-color);
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        letter-spacing: 1px;
-      }
-
-      .newsletter-section p {
-        color: #000000;
-        margin-bottom: 2rem;
-        font-weight: 600;
-      }
-
-      .newsletter-form {
-        display: flex;
-        align-items: flex-end;
-        gap: 10px;
-      }
-
-      .form-input {
-        padding: 0.5rem;
-        border: 2px solid #e9ecef;
-        border-radius: 5px;
-        font-size: 1rem;
-        outline: none;
-        transition: border-color 0.3s;
-      }
-
-      .form-input:focus {
-        border-color: #74b9ff;
-      }
-
-      .subscribe-btn {
-        background-color: var(--white-color);
-        color: var(--btn-color);
-        padding: 8px 15px;
-        border: 1px solid #004369;
-        border-radius: 7px;
-        font-size: 14px;
-        cursor: pointer;
-        transition: all 0.5s ease-in-out;
-        font-weight: 600;
-        margin-top: var(--m40);
-        width: 150px;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
-      .subscribe-btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background-color: var(--btn-color);
-        transition: all 0.5s ease-in-out;
-        z-index: -1;
-      }
-
-      .subscribe-btn:hover {
-        color: white;
-        /* box-shadow: 0 10px 30px rgba(83, 0, 140, 0.4); */
-      }
-
-      .subscribe-btn:hover::before {
-        height: 100%;
-      }
-
-      .contact-section h3 {
-        color: var(--btn-color);
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .contact-section p {
-        color: #000000;
-        margin-bottom: 2rem;
-        font-weight: 600;
-      }
-
-      .contact-content {
-        padding-left: 1rem;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1rem;
-      }
-
-      .social-link {
-        width: 50px;
-        height: 50px;
-        background: white;
-        border: 1px solid var(--btn-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--btn-color);
-        text-decoration: none;
-        font-size: 1.5rem;
-        transition: all 0.3s;
-      }
-
-      .social-link:hover {
-        background: var(--btn-hover-color);
-        transform: translateY(-3px);
-        color: white;
-        box-shadow: 0 5px 15px rgba(15, 94, 128, 0.3);
-      }
-
-      .footer-bottom {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 4rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer-logo {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-      }
-
-      .footer-logo h4 {
-        color: #2c3e50;
-        font-size: 1.2rem;
-        margin: 0;
-      }
-
-      .footer-logo p {
-        color: #000000;
-        margin: 0;
-        font-size: 1rem;
-      }
-
-      .footer-logo small {
-        color: #999;
-        font-size: 0.8rem;
-      }
-
-      .footer-description {
-        color: #000000;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-      }
-
-      .footer-book-btn {
-        background-color: var(--btn-color);
-        color: white;
-        border: none;
-        padding: 1rem 2rem;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .footer-book-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(83, 0, 140, 0.3);
-      }
-
-      .footer-links {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
-
-      .footer-column h4 {
-        color: var(--btn-color);
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-
-      .footer-column ul {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .footer-column ul li {
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-column ul li a {
-        color: #000000;
-        text-decoration: none;
-        transition: color 0.3s;
-        font-size: 14px;
-      }
-
-      .footer-column ul li a:hover {
-        color: #74b9ff;
-      }
-
-      .footer-column ul li a::before {
-        content: "▶ ";
-        color: #ccc;
-        font-size: 14px;
-        margin-right: 0.5rem;
-      }
-
-      .contact-info p {
-        color: #000000;
-        margin-bottom: 0.5rem;
-        font-size: 14px;
-      }
-
-      .badges {
-        display: flex;
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .badges img {
-        border-radius: 5px;
-      }
-
-      .footer-copyright {
-        background-color: var(--btn-color);
-        color: white;
-        padding-top: 1.5rem;
-      }
-
-      .copyright-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .developer-link {
-        color: #ffd54f;
-        font-weight: 600;
-      }
-
       /* Responsive Design */
       @media (max-width: 768px) {
         .sidebar {
@@ -1501,42 +1168,6 @@
         .attraction-card {
           height: 300px;
         }
-
-        .footer-content {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .contact-section {
-          padding-left: 0;
-          padding-top: 2rem;
-          margin-top: 1rem;
-          border-top: 1px solid #000000;
-        }
-
-        .contact-section::before {
-          display: none;
-        }
-
-        .newsletter-form {
-          grid-template-columns: 1fr;
-          gap: 1rem;
-        }
-
-        .footer-bottom {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-        }
-
-        .footer-links {
-          grid-template-columns: 1fr;
-        }
-
-        .copyright-content {
-          flex-direction: column;
-          gap: 1rem;
-          text-align: center;
-        }
       }
 
       @media (max-width: 1024px) {
@@ -1562,7 +1193,7 @@
     </style>
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header
     <header class="header">
       <div class="container-fluid">
         <div class="header-content">
@@ -1586,30 +1217,10 @@
           </div>
         </div>
       </div>
-    </header>
+    </header> -->
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <div class="logo mb-3">
-          <img
-            src="ole-ike-white-2048x1325 (2) (1).png"
-            alt=""
-            class=""
-            style="height: 100%; width: auto"
-          />
-        </div>
-        <button class="close-btn" onclick="toggleSidebar()">×</button>
-      </div>
-      <ul class="sidebar-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#destinations">About Us</a></li>
-        <li><a href="/property.html">Property</a></li>
-        <li><a href="#management">Local Guide</a></li>
-        <li><a href="/enquiry-form.html">Plan For Trip</a></li>
-        <li><a href="#contact">Contact us</a></li>
-      </ul>
-    </div>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
 
     <!-- Overlay -->
     <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
@@ -2217,169 +1828,8 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <!-- Newsletter Section -->
-          <div class="newsletter-section">
-            <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
-            <p>
-              AND RECEIVE A PROMO CODE ON YOUR NEXT STAY WHEN YOU BOOK DIRECT
-            </p>
-
-            <div class="newsletter-form">
-              <div class="row g-3">
-                <div class="col-md-6 col-lg-3">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    class="form-control form-input"
-                  />
-                </div>
-                <div class="col-md-6 col-lg-3">
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    class="form-control form-input"
-                  />
-                </div>
-                <div class="col-md-6 col-lg-4">
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    class="form-control form-input"
-                  />
-                </div>
-                <div class="col-md-6 col-lg-2">
-                  <button
-                    type="submit"
-                    class="main-btn subscribe-btn w-100"
-                    style="
-                      border: 3px solid var(--white);
-                      box-shadow: 0 4px 4px rgba(121, 119, 119, 0.2);
-                    "
-                  >
-                    Subscribe
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Get in Touch Section -->
-          <div class="contact-section">
-            <div class="contact-content">
-              <h3>Get in Touch</h3>
-              <p>FOLLOW US ON SOCIAL MEDIA.</p>
-
-              <div class="social-links">
-                <a href="#" class="social-link"><i class="fas fa-phone"></i></a>
-                <a href="#" class="social-link"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a href="#" class="social-link"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <div class="footer-left">
-            <div class="footer-logo">
-              <img
-                src="WhatsApp Image 2025-08-21 at 6.41.31 PM.jpeg"
-                alt="Citrus & Serena Logo"
-                width="auto"
-                height="60px"
-              />
-            </div>
-
-            <p class="footer-description">
-              We are a family-owned vacation rental business. Our homes are
-              designed to be your home away from home, offering comfort, luxury,
-              and exceptional hospitality for unforgettable trips and vacations.
-            </p>
-
-            <button
-              class="main-btn cta-btn"
-              style="
-                border: 3px solid var(--white);
-                box-shadow: 0 4px 4px rgba(121, 119, 119, 0.2);
-              "
-            >
-              Book Now
-            </button>
-          </div>
-
-          <div class="footer-links">
-            <div class="footer-column">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Property Details</a></li>
-                <li><a href="#">Local Guide</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-
-            <div class="footer-column">
-              <h4>Contact Info</h4>
-              <div class="contact-info">
-                <p>
-                  <i
-                    class="fas fa-map-marker-alt"
-                    style="color: var(--btn-color)"
-                  ></i>
-                  XYZ, XYZ
-                </p>
-                <p>
-                  <i class="fas fa-phone" style="color: var(--btn-color)"></i>
-                  +1 (844)460-8983
-                </p>
-                <p>
-                  <i
-                    class="fas fa-envelope"
-                    style="color: var(--btn-color)"
-                  ></i>
-                  hello@lan.com
-                </p>
-              </div>
-
-              <div class="badges">
-                <img
-                  src="image-removebg-preview.png"
-                  alt="Airbnb Superhost"
-                  width="120"
-                />
-                <img
-                  src="WhatsApp_Image_2025-08-13_at_10.00.03_PM__2_-removebg-preview.png"
-                  alt="VRBO Premier Host"
-                  width="120"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-copyright">
-        <div class="container">
-          <div class="copyright-content">
-            <p>Copyright © 2025 All Rights Reserved</p>
-            <p>
-              Policy | Terms of Use | Privacy Policy | Cookie Policy
-              <!-- <span class="developer-link">🎨 webdesignvr</span> -->
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Swiper JS -->
@@ -2510,5 +1960,126 @@
       // Initialize parallax effect
       document.addEventListener("DOMContentLoaded", handleParallax);
     </script>
+
+    <!-- Newsletter Overlay -->
+    <div class="newsletter-overlay" id="newsletterOverlay">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <div class="newsletter-form">
+            <h2>
+Join for a chance to win a free stay!</h2>
+            <p>
+             Get notified with occasional updates and discounts on our luxury villa.
+            </p>
+
+            <form
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+            >
+              <div class="form-group">
+                <div class="indicates-required">
+                  <span class="asterisk">*</span> indicates required
+                </div>
+
+                <div class="field-group">
+                  <label for="mce-FNAME"
+                    >First Name <span class="asterisk">*</span></label
+                  >
+                  <input
+                    type="text"
+                    value=""
+                    name="FNAME"
+                    class="required"
+                    id="mce-FNAME"
+                    required
+                  />
+                </div>
+
+                <div class="field-group">
+                  <label for="mce-LNAME">Last Name</label>
+                  <input type="text" value="" name="LNAME" id="mce-LNAME" />
+                </div>
+
+                <div class="field-group">
+                  <label for="mce-EMAIL"
+                    >Email Address <span class="asterisk">*</span></label
+                  >
+                  <input
+                    type="email"
+                    value=""
+                    name="EMAIL"
+                    class="required email"
+                    id="mce-EMAIL"
+                    required
+                  />
+                </div>
+
+                <div class="button-container">
+                  <button
+                    type="submit"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    class="button"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="mailchimp-branding">
+              <img
+                src="https://cdn-images.mailchimp.com/monkey_rewards/intuit-mc-rewards-black-75px.png"
+                alt="Mailchimp"
+              />
+            </div>
+          </div>
+          <div class="newsletter-image">
+            <!-- Image on the right side -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script to load header and footer -->
+    <script>
+      // Load Header
+      fetch("includes/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+
+      // Load Footer
+      fetch("includes/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+
+      // Function to toggle sidebar
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+        document.getElementById("overlay").classList.toggle("active");
+      }
+
+      // Add scroll event listener to handle header style changes
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <!-- Newsletter CSS -->
+    <link rel="stylesheet" href="assets/css/newsletter.css" />
+
+    <!-- Newsletter Script -->
+    <script src="assets/js/newsletter.js"></script>
   </body>
 </html>

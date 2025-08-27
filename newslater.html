@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter Subscription</title>
+    <link rel="stylesheet" href="assets/css/newsletter.css" />
+    <style>
+      /* Add any additional styles specific to standalone newsletter page here */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Make the overlay visible by default on the standalone page */
+      .newsletter-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="newsletter-overlay" id="newsletterOverlay">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <div class="newsletter-form">
+            <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+            <p>
+              and receive a promo code on your next stay when you book direct!
+            </p>
+
+            <form
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+            >
+              <div class="form-group">
+                <div class="indicates-required">
+                  <span class="asterisk">*</span> indicates required
+                </div>
+
+                <div class="field-group">
+                  <label for="mce-FNAME"
+                    >First Name <span class="asterisk">*</span></label
+                  >
+                  <input
+                    type="text"
+                    value=""
+                    name="FNAME"
+                    class="required"
+                    id="mce-FNAME"
+                    required
+                  />
+                </div>
+
+                <div class="field-group">
+                  <label for="mce-LNAME">Last Name</label>
+                  <input type="text" value="" name="LNAME" id="mce-LNAME" />
+                </div>
+
+                <div class="field-group">
+                  <label for="mce-EMAIL"
+                    >Email Address <span class="asterisk">*</span></label
+                  >
+                  <input
+                    type="email"
+                    value=""
+                    name="EMAIL"
+                    class="required email"
+                    id="mce-EMAIL"
+                    required
+                  />
+                </div>
+
+                <div class="button-container">
+                  <button
+                    type="submit"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
+                    class="button"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="mailchimp-branding">
+              <img
+                src="https://cdn-images.mailchimp.com/monkey_rewards/intuit-mc-rewards-black-75px.png"
+                alt="Mailchimp"
+              />
+            </div>
+          </div>
+          <div class="newsletter-image">
+            <!-- Image on the right side -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/newsletter.js"></script>
+  </body>
+</html>

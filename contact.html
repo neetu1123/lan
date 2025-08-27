@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Ole Ike Bay</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dynalight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* Contact Page Specific Styles */
+      .contact-page {
+        padding: 120px 0 80px;
+        background-color: #f8f9fa;
+      }
+
+      .contact-page-title {
+        color: #f7b26c;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .contact-page h1 {
+        color: #2c3e50;
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .contact-info-section {
+        flex: 1;
+        min-width: 300px;
+        padding-right: 30px;
+      }
+
+      .contact-form-section {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .contact-info-item {
+        margin-bottom: 30px;
+      }
+
+      .contact-info-item h3 {
+        color: #2c3e50;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+
+      .contact-info-item p {
+        color: #555;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-info-item i {
+        color: var(--btn-color);
+        margin-right: 10px;
+        min-width: 20px;
+      }
+
+      .contact-form-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .contact-form-card h2 {
+        color: #2c3e50;
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      #contactForm .form-control {
+        height: 50px;
+        border: none;
+        border-bottom: 1px solid #ddd;
+        border-radius: 0;
+        padding: 10px 0;
+        font-size: 14px;
+        color: #333;
+      }
+
+      textarea.form-control {
+        min-height: 100px;
+      }
+
+       #contactForm .form-control:focus {
+        box-shadow: none;
+        border-color: var(--btn-color);
+      }
+
+      .captcha-container {
+        /* display: flex; */
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .captcha-image {
+        flex: 0 0 150px;
+        margin-right: 15px;
+      }
+
+      .captcha-input {
+        flex: 1;
+      }
+
+      .submit-btn {
+        background-color: #f7b26c;
+        color: #fff;
+        border: none;
+        padding: 12px 30px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        /* width: 100%; */
+        margin-top: 10px;
+      }
+
+      .submit-btn:hover {
+        background-color: #e5a25b;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(247, 178, 108, 0.3);
+      }
+
+      @media (max-width: 992px) {
+        .contact-container {
+          flex-direction: column;
+        }
+
+        .contact-info-section {
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-form-card {
+          padding: 20px;
+        }
+
+        .contact-page-title {
+          font-size: 12px;
+        }
+
+        .contact-page h1 {
+          font-size: 28px;
+        }
+      }
+      .map {
+        width: 100%;
+        height: 400px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+      <div class="container">
+        <div class="contact-container">
+          <div class="contact-info-section">
+            <h4 class="contact-page-title">GET IN TOUCH</h4>
+            <h1>Contact Info</h1>
+
+            <div class="contact-info-item">
+              <h3>ADDRESS</h3>
+              <p><i class="fas fa-map-marker-alt"></i> Bradenton, Florida</p>
+            </div>
+
+            <div class="contact-info-item">
+              <h3>PHONE</h3>
+              <p><i class="fas fa-phone"></i> +1 (941) 444-9349</p>
+            </div>
+
+            <div class="contact-info-item">
+              <h3>EMAIL</h3>
+              <p><i class="fas fa-envelope"></i> hello@oleikebay.com</p>
+            </div>
+          </div>
+
+          <div class="contact-form-section">
+            <div class="contact-form-card">
+              <h2>Contact Form</h2>
+              <form id="contactForm">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Full Name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    placeholder="Phone number"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    placeholder="Message"
+                    rows="4"
+                  ></textarea>
+                </div>
+
+                <div class="captcha-container">
+                  <div class="captcha-image">
+                    <img
+                      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCAyMDAgNTAiPgogIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iNTAiIGZpbGw9IiNmMWYxZjEiLz4KICA8dGV4dCB4PSIyMCIgeT0iMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzMzMyI+cCBtIHQgPiBhIDwvdGV4dD4KPC9zdmc+"
+                      alt="CAPTCHA"
+                      width="150"
+                      height="50"
+                    />
+                  </div>
+                  <div class="captcha-input">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Captcha"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map my-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d112185.68743575177!2d77.34071707944612!3d28.515582255633067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smap!5e0!3m2!1sen!2sin!4v1756307331860!5m2!1sen!2sin" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script to load header and footer -->
+    <script>
+      // Load Header
+      fetch("includes/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+
+      // Load Footer
+      fetch("includes/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+
+      // Function to toggle sidebar
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+        document.getElementById("overlay").classList.toggle("active");
+      }
+
+      // Add scroll event listener to handle header style changes
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>

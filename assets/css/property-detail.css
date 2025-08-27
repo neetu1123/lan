@@ -1,0 +1,309 @@
+/* Property Detail Page Styles */
+
+/* Property Detail Section */
+.property-details {
+    padding-top: 15px;
+    /* padding-bottom: 40px; */
+}
+
+.property-details h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.property-details h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.property-details h5 {
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+/* Overview Section */
+.overview-content p {
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+#showMoreLink {
+    color: var(--btn-color);
+    font-weight: 600;
+}
+
+#showMoreLink:hover {
+    text-decoration: underline !important;
+}
+
+/* Amenities Section */
+.amenity-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.amenity-item i {
+    color: var(--btn-color);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Things To Know Section */
+#things-to-know-section {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#things-to-know-section h5 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+#things-to-know-section p {
+    color: #4a4a4a;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+#things-to-know-section a {
+    color: var(--btn-color);
+    font-weight: 600;
+}
+
+#things-to-know-section a:hover {
+    text-decoration: underline !important;
+}
+
+/* Calendar Sidebar */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.calendar-grid {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-hover-color);
+    border-color: var(--btn-hover-color);
+}
+
+.btn-outline-secondary {
+    color: var(--btn-color);
+    border-color: var(--btn-color);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--btn-hover-color);
+    border-color: var(--btn-hover-color);
+    color: #fff;
+}
+
+/* Calendar Date Styles */
+.calendar-date {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calendar-date:hover {
+    background-color: #e9ecef;
+}
+
+.date-available {
+    background-color: transparent;
+    color: #212529;
+}
+
+.date-unavailable {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.date-selected {
+    background-color: var(--btn-color);
+    color: white;
+}
+
+.date-today {
+    border: 2px solid var(--btn-color);
+    color: var(--btn-color);
+    font-weight: bold;
+}
+
+/* Modal Styles */
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: var(--bs-modal-color);
+    pointer-events: auto;
+    background-color: var(--bs-modal-bg);
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+    height: 100%;
+}
+
+/* Custom side panel modal styling */
+#amenitiesModal .modal-dialog, 
+#houseRulesModal .modal-dialog, 
+#safetyModal .modal-dialog, 
+#cancellationModal .modal-dialog {
+    max-width: 700px;
+    height: 100vh;
+    position: absolute;
+    left: auto;
+    right: -700px;
+    /* width: 700px; */
+    top: 0;
+    margin: 0px;
+    transition: all .3s ease;
+}
+
+#amenitiesModal.show .modal-dialog, 
+#houseRulesModal.show .modal-dialog, 
+#safetyModal.show .modal-dialog, 
+#cancellationModal.show .modal-dialog {
+    right: 0;
+}
+
+/* Add additional styling for modal backdrop */
+.modal-backdrop {
+    opacity: 0.5;
+}
+
+/* Custom animation for side modals */
+.show-side-modal .modal-dialog {
+    right: 0 !important;
+    animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    height: calc(100vh - 70px); /* Subtract modal header height */
+}
+
+.modal-body p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.modal-body h6 {
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.modal-body ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-body ul li {
+    margin-bottom: 0.5rem;
+}
+
+.modal-body strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .property-details {
+        padding-top: 10px;
+    }
+    
+    .sticky-top {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: 30px;
+    }
+    
+    /* Adjust modal width on tablet devices */
+    #amenitiesModal .modal-dialog, 
+    #houseRulesModal .modal-dialog, 
+    #safetyModal .modal-dialog, 
+    #cancellationModal .modal-dialog {
+        max-width: 500px;
+        width: 500px;
+        right: -500px;
+    }
+}
+
+@media (max-width: 768px) {
+    #things-to-know-section .col-md-4 {
+        margin-bottom: 30px;
+    }
+    
+    .calendar-grid {
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust modal width on mobile devices */
+    #amenitiesModal .modal-dialog, 
+    #houseRulesModal .modal-dialog, 
+    #safetyModal .modal-dialog, 
+    #cancellationModal .modal-dialog {
+        max-width: 100%;
+        width: 100%;
+        right: -100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .property-details h2 {
+        font-size: 1.8rem;
+    }
+    
+    .property-details h3 {
+        font-size: 1.3rem;
+    }
+    
+    .calendar-date {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+}
