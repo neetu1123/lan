@@ -28,8 +28,9 @@
 
       /* Attractions Section */
       .attractions {
-        padding: 6rem 0;
-        background: #f8f9fa;
+        padding-top: 1rem ;
+        margin-bottom: 4rem;
+        /* background: #f8f9fa; */
       }
 
       .attractions-subtitle {
@@ -130,22 +131,48 @@
 
        
       }
+.about-hero {
+  height: 50vh;
+  background: url("../../Side-view-aerial-look-at-dock-scaled.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  margin-bottom: 4rem;
+}
 
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.section-title {
+ text-align: center;
+}
 </style>
 <body>
      <!-- Include Header -->
     <div id="header-placeholder"></div>
-
+  <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <h1>Local Guide</h1>
+      </div>
+    </section>
       <!-- Attractions Section -->
     <section class="attractions">
       <div class="container">
+        <h2 class="section-title">Explore Attractions</h2>
         <p class="attractions-subtitle">
           HAND-PICKED SELECTION OF QUALITY PLACES
         </p>
-        <h2 class="section-title">Explore Attractions</h2>
 
         <div class="attractions-grid">
           <div class="attraction-card">
+            <a href="/attraction-list.html">
             <img
               src="Side-view-aerial-look-at-dock-scaled.jpg"
               alt="Dining"
@@ -162,9 +189,11 @@
             <div class="attraction-overlay">
               <h3>Dining</h3>
             </div>
+            </a>
           </div>
 
           <div class="attraction-card">
+             <a href="/attraction-list.html">
             <img
               src="Main-Page-1st-Image-scaled.jpg"
               alt="Places To Visit"
@@ -181,9 +210,11 @@
             <div class="attraction-overlay">
               <h3>Places To Visit</h3>
             </div>
+             </a>
           </div>
 
           <div class="attraction-card">
+             <a href="/attraction-list.html">
             <img
               src="Side-view-aerial-look-at-dock-scaled.jpg"
               alt="Activities"
@@ -200,9 +231,11 @@
             <div class="attraction-overlay">
               <h3>Activities</h3>
             </div>
+            </a>
           </div>
 
           <div class="attraction-card">
+             <a href="/attraction-list.html">
             <img
               src="Main-Page-1st-Image-scaled.jpg"
               alt="Shopping"
@@ -219,6 +252,7 @@
             <div class="attraction-overlay">
               <h3>Shopping</h3>
             </div>
+            </a>
           </div>
         </div>
       </div>

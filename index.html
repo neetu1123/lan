@@ -308,9 +308,18 @@
         cursor: pointer;
       }
 
-      .dropdown-box .arrow {
-        float: right;
-        margin-right: 10px;
+     
+
+      .styled-select {
+        font-size: 14px;
+        border: none;
+        border-radius: 6px;
+        background-color: #fff;
+        color: #333;
+        cursor: pointer;
+      }
+      .styled-select:focus {
+        outline: none;
       }
 
       .check-in,
@@ -1193,32 +1202,6 @@
     </style>
   </head>
   <body>
-    <!-- Header
-    <header class="header">
-      <div class="container-fluid">
-        <div class="header-content">
-          <div class="logo my-3">
-            <img
-              src="ole-ike-white-2048x1325 (2) (1).png"
-              alt=""
-              class=""
-              style="height: 100%; width: auto"
-            />
-          </div>
-          <div class="header-right">
-            <a href="tel:+1-809-795-0054" class="phone"
-              ><i class="fas fa-phone me-1"></i> +1-809-795-0054</a
-            >
-            <button class="menu-btn" onclick="toggleSidebar()">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </header> -->
-
     <!-- Include Header -->
     <div id="header-placeholder"></div>
 
@@ -1231,19 +1214,30 @@
         <div class="row justify-content-center">
           <div class="col-md-10 text-center">
             <div class="hero-content">
-              <!-- <h1>Discover Paradise</h1>
-              <p>
-                Your gateway to elegance in the most sought-after locations in
-                the Caribbean
-              </p> -->
-
               <!-- Search Bar -->
               <form class="Search-bar">
                 <div class="row">
                   <div class="form-group col-3 custom-location-dropdown px-4">
-                    <label for="locations">LOCATION</label><br />
-                    <div class="dropdown-box">
-                      Where do you want to go?<span class="arrow">▾</span>
+                    <label for="locations">Booking Option</label><br />
+                    <div class="dropdown-box custom-select">
+                      <select
+                        name="location"
+                        id="location"
+                        class="styled-select"
+                      >
+                        <option value="" disabled>
+                          Choose as per your preference
+                        </option>
+                        <option value="bedroom-4" selected>
+                          4-bedroom (sleeps up to 9 guests)
+                        </option>
+                        <option value="bedroom-3">
+                          3-bedroom (sleeps up to 6 guests)
+                        </option>
+                        <option value="bedroom-2">
+                          2-bedroom (sleeps up to 4 guests)
+                        </option>
+                      </select>
                     </div>
                   </div>
 
@@ -1966,10 +1960,10 @@
       <div class="newsletter-container">
         <div class="newsletter-content">
           <div class="newsletter-form">
-            <h2>
-Join for a chance to win a free stay!</h2>
+            <h2>Join for a chance to win a free stay!</h2>
             <p>
-             Get notified with occasional updates and discounts on our luxury villa.
+              Get notified with occasional updates and discounts on our luxury
+              villa.
             </p>
 
             <form

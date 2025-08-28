@@ -563,10 +563,35 @@
         border: none;
         margin-bottom: 40px;
       }
+      .about-hero {
+  height: 50vh;
+  background: url("../../Side-view-aerial-look-at-dock-scaled.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
     </style>
 <body>
      <!-- Include Header -->
     <div id="header-placeholder"></div>
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <h1>Property Details</h1>
+      </div>
+    </section>
+
       <!-- Gallery Component -->
     <div class="gallery-section mx-3">
         <!-- Main Gallery Section -->
@@ -613,7 +638,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <!-- Property Detail Header -->
-                    <div class="mb-4">
+                    <div class="mb-4" style="border-bottom: 1px solid #eee;">
                         <h2 class="fw-bold mb-3">Property Detail</h2>
                         <div class="d-flex flex-wrap align-items-center mb-3">
                             <div class="me-4 mb-2 d-flex align-items-center">
@@ -632,7 +657,7 @@
                     </div>
 
                     <!-- Overview Section -->
-                    <div class="mb-5" id="overview-section">
+                    <div class="mb-5" id="overview-section" style="border-bottom: 1px solid #eee;">
                         <h3 class="fw-bold mb-3">Overview</h3>
                         <div class="overview-content">
                             <p>Thoughtfully designed for large groups, perfectly suited for peace. Whether you're a big family, a multi-generational crew, traveling with your close friends, or a group gathered for sports tournaments, our home was made with YOU in mind — every square inch is lovingly designed for memory-making, togetherness, and stress-free comfort.</p>
@@ -652,7 +677,7 @@
                     </div>
 
                     <!-- Amenities Section -->
-                    <div class="mb-5" id="amenities-section">
+                    <div class="mb-5 pb-5" id="amenities-section" style="border-bottom: 1px solid #eee;">
                         <h3 class="fw-bold mb-3">Amenities</h3>
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -851,7 +876,7 @@
                     
                
                 <!-- Things To Know Section -->
-                    <div id="things-to-know-section">
+                    <div id="things-to-know-section" style="border-bottom: 1px solid #eee;">
                         <h3 class="fw-bold mb-3">Things To Know</h3>
                         
                         <div class="row">
