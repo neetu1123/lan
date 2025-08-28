@@ -26,114 +26,178 @@
   </head>
   <style>
     /* About Us Page Styles */
-.about-hero {
-  height: 50vh;
-  background: url("../../Side-view-aerial-look-at-dock-scaled.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  margin-bottom: 4rem;
-}
+    .about-hero {
+      height: 50vh;
+      background: url("../../Side-view-aerial-look-at-dock-scaled.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      margin-bottom: 4rem;
+    }
 
-.about-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
 
-.about-section {
-  /* padding: 60px 0; */
-  /* background-color: var(--background-light); */
-}
+    /* Responsive styles for hero section */
+    @media (max-width: 768px) {
+      .about-hero {
+        height: 30vh;
+        margin-bottom: 2rem;
+      }
 
-.about-us-container {
-  display: flex;
-  align-items: center;
-  /* max-width: 1200px; */
-  margin: 0 auto;
-  padding: 40px;
-  /* background-color: #fff; */
-  /* border-radius: 10px; */
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
-}
+      .about-hero h1 {
+        font-size: 2.2rem;
+      }
+    }
 
-.about-us-image {
-  flex: 1;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-right: 40px;
-}
+    @media (max-width: 480px) {
+      .about-hero {
+        height: 25vh;
+      }
 
-.about-us-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 25px;
-}
+      .about-hero h1 {
+        font-size: 1.8rem;
+      }
+    }
 
-.about-us-content {
-  flex: 1;
-  padding-right: 20px;
-}
+    .about-section {
+      padding: 0;
+      /* background-color: var(--background-light); */
+    }
 
-.about-us-content h2 {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
+    .about-us-container {
+      display: flex;
+      align-items: center;
+      /* max-width: 1200px; */
+      margin: 0 auto;
+      padding: 40px;
+      /* background-color: #fff; */
+      /* border-radius: 10px; */
+      /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+    }
 
-.about-us-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 20px;
-}
+    .about-us-image {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-right: 40px;
+    }
 
-.about-section .contact-info {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  gap: 6rem;
-}
+    .about-us-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 25px;
+    }
 
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+    .about-us-content {
+      flex: 1;
+      padding-right: 20px;
+    }
 
-.contact-icon {
-  width: 40px;
-  height: 40px;
-  background-color: var(--btn-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.2rem;
-}
+    /* Responsive styles for about container */
+    @media (max-width: 992px) {
+      .about-us-container {
+        padding: 30px;
+      }
 
-.contact-details {
-  flex: 1;
-}
+      .about-us-image {
+        margin-right: 30px;
+      }
+    }
 
-.contact-details h3 {
-  font-size: 1.2rem;
-  margin: 0 0 5px;
-  color: #2c3e50;
-}
+    @media (max-width: 768px) {
+      .about-us-container {
+        flex-direction: column;
+        padding: 20px;
+      }
 
-.contact-details p {
-  margin: 0;
-  font-size: 1rem;
-  color: #555;
-}
+      .about-us-image {
+        margin-right: 0;
+        margin-bottom: 30px;
+        width: 100%;
+      }
 
+      .about-us-content {
+        padding-right: 0;
+        width: 100%;
+      }
+    }
+
+    .about-us-content h2 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .about-us-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .about-section .contact-info {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 6rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--btn-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    /* Responsive styles for contact info */
+    @media (max-width: 992px) {
+      .about-section .contact-info {
+        gap: 3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-section .contact-info {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+
+    .contact-details {
+      flex: 1;
+    }
+
+    .contact-details h3 {
+      font-size: 1.2rem;
+      margin: 0 0 5px;
+      color: #2c3e50;
+    }
+
+    .contact-details p {
+      margin: 0;
+      font-size: 1rem;
+      color: #555;
+    }
   </style>
   <body>
     <!-- Include Header -->
@@ -174,7 +238,6 @@
               every aspect of your stay is enjoyable and stress-free.
             </p>
 
-          
             <div class="contact-info">
               <div class="contact-item">
                 <div class="contact-icon">
