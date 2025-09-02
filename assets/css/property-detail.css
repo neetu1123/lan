@@ -219,7 +219,7 @@
 }
 
 .modal-body {
-    padding: 1.5rem;
+    padding: 1rem;
     overflow-y: auto;
     height: calc(100vh - 70px); /* Subtract modal header height */
 }
@@ -227,6 +227,7 @@
 .modal-body p {
     margin-bottom: 1rem;
     line-height: 1.7;
+    font-size: 0.9rem;
 }
 
 .modal-body h6 {
