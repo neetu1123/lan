@@ -70,18 +70,26 @@
     }
 
     .attraction-card img {
-      transition: transform 0.5s ease;
+      transition: all 0.5s ease;
     }
 
-    .attraction-card:hover img,
-    .attraction-card.active-touch img {
+    /* Apply filter to all images by default when attractions-grid is in hover state */
+    .attractions-grid:hover .attraction-card img,
+    .attractions-grid.hover-active .attraction-card img {
+      filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+      /* transform: scale(0.95); */
+    }
+
+    /* Remove filter from the hovered image */
+    .attraction-card:hover img {
+      filter: none !important;
       transform: scale(1.05);
     }
 
     /* Active touch state for mobile */
-    .attraction-card.active-touch {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    .attraction-card.active-touch img {
+      filter: none !important;
+      transform: scale(1.05);
     }
 
     .attraction-card.dining {
@@ -183,7 +191,7 @@
       }
     }
     .about-hero {
-      height: 50vh;
+      height: 40vh;
       background: url("Side-view-aerial-look-at-dock-scaled.jpg");
       background-size: cover;
       background-position: center;
@@ -411,6 +419,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         // Add touch support for attraction cards
         const attractionCards = document.querySelectorAll(".attraction-card");
+        const attractionsGrid = document.querySelector(".attractions-grid");
 
         // For mobile devices
         if (window.innerWidth <= 768) {
@@ -423,6 +432,21 @@
               // Add active class to current card
               this.classList.add("active-touch");
             });
+          });
+        }
+
+        // Enhanced hover effects for desktop devices
+        if (window.innerWidth > 768) {
+          // Set a hover state on the grid when any card is hovered
+          attractionCards.forEach((card) => {
+            card.addEventListener("mouseenter", function () {
+              attractionsGrid.classList.add("hover-active");
+            });
+          });
+
+          // Remove the hover state when mouse leaves the grid
+          attractionsGrid.addEventListener("mouseleave", function () {
+            attractionsGrid.classList.remove("hover-active");
           });
         }
 

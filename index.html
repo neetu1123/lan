@@ -242,7 +242,7 @@
 
       /* Hero Section */
       .hero {
-        height: 100vh;
+        height: 85vh;
         background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
           url("Side-view-aerial-look-at-dock-scaled.jpg");
         background-size: cover;
@@ -307,8 +307,6 @@
         font-size: 14px;
         cursor: pointer;
       }
-
-     
 
       .styled-select {
         font-size: 14px;
@@ -443,7 +441,7 @@
 
       /* Properties Section */
       .properties {
-        padding: 6rem 0;
+        padding: 3rem 0;
         /* background: #f8f9fa; */
       }
 
@@ -1011,18 +1009,33 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
 
-      .attraction-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      }
+       .attraction-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
 
-      .attraction-card img {
-        transition: transform 0.5s ease;
-      }
+    .attraction-card img {
+      transition: all 0.5s ease;
+    }
 
-      .attraction-card:hover img {
-        transform: scale(1.05);
-      }
+    /* Apply filter to all images by default when attractions-grid is in hover state */
+    .attractions-grid:hover .attraction-card img,
+    .attractions-grid.hover-active .attraction-card img {
+      filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+      /* transform: scale(0.95); */
+    }
+
+    /* Remove filter from the hovered image */
+    .attraction-card:hover img {
+      filter: none !important;
+      transform: scale(1.05);
+    }
+
+    /* Active touch state for mobile */
+    .attraction-card.active-touch img {
+      filter: none !important;
+      transform: scale(1.05);
+    }
 
       .attraction-card.dining {
         background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
@@ -1323,7 +1336,7 @@
     <section class="properties">
       <div class="container">
         <p class="badge-property">
-          <i class="fab fa-shield-check"></i>Best Rates Guaranteed when Booking
+          <i class="fas fa-shield-alt" style="color: var(--btn-color); font-size: 1.2rem;"></i> Best Rates Guaranteed when Booking
           Direct
         </p>
         <h2 class="section-title">Unique homes, outstanding destinations</h2>
