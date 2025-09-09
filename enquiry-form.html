@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Dynalight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-  <!-- Custom CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <style>
       :root {
@@ -195,45 +195,58 @@
         }
       }
       .about-hero {
-  height: 40vh;
-  background: url("../../Side-view-aerial-look-at-dock-scaled.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  margin-bottom: 4rem;
-}
+        height: 40vh;
+        background: url("../../Side-view-aerial-look-at-dock-scaled.jpg");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        position: relative;
+        margin-bottom: 4rem;
+      }
 
-.about-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+      .about-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
     </style>
   </head>
   <body>
     <!-- Include Header -->
     <div id="header-placeholder"></div>
-<!-- About Hero Section -->
+
+    <!-- About Hero Section -->
     <section class="about-hero">
       <div class="container">
         <h1>Enquiry Section</h1>
       </div>
     </section>
 
+    <!-- Breadcrumb Section -->
+    <div class="container mt-4 mb-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Enquiry Form
+          </li>
+        </ol>
+      </nav>
+    </div>
+
     <section class="enquiry-section">
       <div class="container">
         <h1 class="enquiry-title">
-          Enter your enquiry below to have your Ole Ike Bay Travel Advisor contact and
-          assist you
+          Enter your enquiry below to have your Ole Ike Bay Travel Advisor
+          contact and assist you
         </h1>
 
         <div class="form-container">
           <form id="enquiryForm">
-            <div class="row ">
+            <div class="row">
               <!-- <div class="col-md-6">
                 <label for="destination" class="form-label">Destination</label>
                 <input
@@ -266,9 +279,9 @@
               </div>
             </div>
 
-            <div class="row "></div>
+            <div class="row"></div>
 
-            <div class="row ">
+            <div class="row">
               <div class="col-md-6">
                 <label for="firstName" class="form-label"
                   >First name<span class="asterisk">*</span></label
@@ -310,7 +323,7 @@
               </div>
             </div>
 
-            <div class="row ">
+            <div class="row">
               <div class="col-md-12">
                 <label for="phone" class="form-label">Phone number</label>
                 <div class="input-group">
@@ -356,7 +369,8 @@
                     id="newsletterCheckbox"
                   />
                   <label class="form-check-label" for="newsletterCheckbox">
-                    Send me emails with travel inspiration and news about Ole Ike Bay.
+                    Send me emails with travel inspiration and news about Ole
+                    Ike Bay.
                   </label>
                 </div>
               </div>
@@ -387,7 +401,7 @@
         </div>
       </div>
     </section>
-  <!-- Include Footer -->
+    <!-- Include Footer -->
     <div id="footer-placeholder"></div>
 
     <!-- Bootstrap JS Bundle with Popper -->
@@ -425,7 +439,7 @@
         }
       });
     </script>
-   
+
     <!-- Form validation script -->
     <script>
       // Simple form validation
