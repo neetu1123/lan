@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Meet Our Team - Ole Ike Bay</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dynalight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oranienbaum&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <style>
+    /* Team Section Styles */
+    .about-hero {
+      height: 40vh;
+      background: url("Side-view-aerial-look-at-dock-scaled.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      margin-bottom: 4rem;
+    }
+
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-family: "Oranienbaum", serif;
+      color: var(--text-dark);
+    }
+
+    .team-section {
+      padding: 2rem 0 5rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .team-member {
+      text-align: center;
+    }
+
+    .member-image-container {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .member-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .member-name {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--text-dark);
+      font-family: "Oranienbaum", serif;
+    }
+
+    .member-title {
+      font-size: 0.9rem;
+      color: var(--btn-color);
+      margin-bottom: 0;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1200px) {
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .about-hero {
+        height: 40vh;
+        margin-bottom: 2.5rem;
+      }
+
+      .about-hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .team-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2.5rem;
+      }
+
+      .about-hero {
+        height: 30vh;
+        margin-bottom: 2rem;
+      }
+
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+
+      .member-image-container {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+  <body>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <h1>Meet the Team</h1>
+      </div>
+    </section>
+    <div class="text-center">
+      <h2 class="mb-5" style="font-size: 3.5rem">Our Team</h2>
+    </div>
+    <!-- Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <div class="row">
+          <!-- Leadership Team -->
+          <div class="col-12 mb-4">
+            <div class="team-grid">
+              <!-- Team Member 1 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp Image 2025-08-21 at 6.55.54 PM.jpeg"
+                    alt="Lyn Bryan"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">Lyn Bryan</h4>
+                <p class="member-title">CEO</p>
+              </div>
+
+              <!-- Team Member 2 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                    alt="Lauren Pybus"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">Lauren Pybus</h4>
+                <p class="member-title">VP Growth & Development</p>
+              </div>
+
+              <!-- Team Member 3 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg"
+                    alt="Raelene Thomas"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">Raelene Thomas</h4>
+                <p class="member-title">VP Finance & Operations</p>
+              </div>
+
+              <!-- Team Member 4 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp Image 2025-08-21 at 6.41.31 PM.jpeg"
+                    alt="Mitchell Fawcett"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">Mitchell Fawcett</h4>
+                <p class="member-title">VP Strategy</p>
+              </div>
+
+              <!-- Team Member 5 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp Image 2025-08-21 at 6.39.51 PM.jpeg"
+                    alt="Jieun Segal"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">Jieun Segal</h4>
+                <p class="member-title">VP Sales & Marketing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Support Team -->
+          <div class="col-12">
+            <div class="team-grid">
+              <!-- Team Member 6 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp_Image_2025-08-13_at_10.00.03_PM__2_-removebg-preview.png"
+                    alt="Darren Maher"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">Darren Maher</h4>
+                <p class="member-title">Creative Director</p>
+              </div>
+
+              <!-- Team Member 7 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp Image 2025-08-21 at 6.54.53 PM.jpeg"
+                    alt="Ben Van Exan"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">Ben Van Exan</h4>
+                <p class="member-title">Snr Account Executive</p>
+              </div>
+
+              <!-- Team Member 8 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                    alt="John Brown"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">John Brown</h4>
+                <p class="member-title">Founding Partner</p>
+              </div>
+
+              <!-- Team Member 9 -->
+              <div class="team-member">
+                <div class="member-image-container">
+                  <img
+                    src="WhatsApp Image 2025-08-21 at 6.39.51 PM.jpeg"
+                    alt="Chris Brinkss"
+                    class="member-image"
+                  />
+                </div>
+                <h4 class="member-name">Chris Brinkss</h4>
+                <p class="member-title">Founding Partner</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script to load header and footer -->
+    <script>
+      // Load Header
+      fetch("includes/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+
+      // Load Footer
+      fetch("includes/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+
+      // Function to toggle sidebar
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+        document.getElementById("overlay").classList.toggle("active");
+      }
+
+      // Add scroll event listener to handle header style changes
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
+</html>
