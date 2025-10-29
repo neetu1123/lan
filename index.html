@@ -29,22 +29,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <style>
-      :root {
-        /* Brand Colors */
-        --btn-color: #1883b0; /* Primary color for buttons/icons */
-        --btn-hover-color: #0f5e80; /* Dark shade for button hover */
-        --accent-color: #53b8d5; /* For accents and highlights */
-
-        /* Keep existing colors for text and backgrounds */
-        --white-color: #ffffff;
-        --primary-font: "Montserrat", sans-serif;
-        --f14: 14px;
-        --p12: 12px;
-        --p15: 15px;
-        --background-light: #f8f9fa;
-        --text-dark: #2c3e50;
-        --grey-dark: #000000;
-      }
+      
 
       * {
         margin: 0;
@@ -164,82 +149,7 @@
       }
 
       /* Sidebar Styles */
-      .sidebar {
-        position: fixed;
-        top: 0;
-        right: -400px;
-        width: 400px;
-        height: 100vh;
-        background: linear-gradient(135deg, #1883b0 0%, #0f5e80 100%);
-        color: white;
-        padding: 2rem;
-        transition: right 0.3s ease;
-        z-index: 1001;
-      }
-
-      .sidebar.active {
-        right: 0;
-      }
-
-      .sidebar-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* margin-bottom: 1.3rem; */
-      }
-
-      .sidebar-logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        letter-spacing: 2px;
-      }
-
-      .close-btn {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-        padding: 5px;
-      }
-
-      .sidebar-menu {
-        list-style: none;
-      }
-
-      .sidebar-menu li {
-        margin-bottom: 0.8rem;
-      }
-
-      .sidebar-menu a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.1rem;
-        transition: color 0.3s;
-      }
-
-      .sidebar-menu a:hover {
-        color: #74b9ff;
-      }
-
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
+    
       /* Hero Section */
       .hero {
         height: 85vh;
@@ -440,24 +350,122 @@
       }
 
       /* Properties Section */
+      .properties1-section {
+        padding-bottom: 100px;
+        margin-top: 100px;
+        padding-top: 2rem;
+        background: var(--background-light);
+      }
+
+      /* Initial state for animation */
+      .property1-card {
+        transform: translateY(2px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .section1-header {
+        margin-bottom: 60px;
+        text-align: center;
+      }
+
+      .section1-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--text-dark);
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+
+      .section1-subtitle {
+        color: var(--grey-dark);
+        font-size: 1rem;
+        max-width: 70%;
+        margin: 0 auto;
+      }
+
+      .property1-card {
+        background: var(--text-light);
+        border-radius: 12px;
+        overflow: hidden;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        position: relative;
+      }
+
+      .property1-image {
+        height: 375px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .property1-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .property1-content {
+        padding: 20px;
+        position: relative;
+      }
+
+      .property1-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-dark);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+
+      .property1-description {
+        color: var(--grey-dark);
+        margin-bottom: 10px;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .property1-price {
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .property1-details {
+        display: flex;
+        gap: 20px;
+        color: #666;
+        font-size: 0.9rem;
+        justify-content: space-between;
+      }
+
+      .property1-detail {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Properties Section */
       .properties {
         padding: 3rem 0;
-        /* background: #f8f9fa; */
+        background: var(--light-gray);
       }
 
       .section-title {
         text-align: center;
-        font-size: 2.5rem;
+        font-size: var(--h1-size);
         margin-bottom: 1rem;
-        color: #2c3e50;
+        color: var(--primary-color);
         font-weight: 400;
+        font-family: var(--heading-font);
       }
 
       .section-subtitle {
         text-align: center;
-        font-size: 14px;
-        color: #333;
-        font-weight: 500px;
+        font-size: var(--body-size);
+        color: var(--text-dark);
+        font-weight: 300;
+        font-family: var(--secondary-font);
         margin-bottom: 4rem;
         line-height: 24px;
         letter-spacing: 0.05em;
@@ -507,11 +515,12 @@
       .property-card {
         border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 13, 45, 0.1);
         transition: transform 0.3s, box-shadow 0.3s;
-        background: white;
+        background: var(--white-color);
         position: relative;
         height: 350px;
+        border: 1px solid var(--light-gray);
       }
 
       .property-card:hover {
@@ -637,15 +646,18 @@
       } */
 
       .experience-card h3 {
-        font-size: 1.3rem;
+        font-size: var(--h3-size);
         margin-bottom: 1rem;
-        color: #2c3e50;
-        font-weight: 800;
+        color: var(--primary-color);
+        font-weight: 400;
+        font-family: var(--heading-font);
       }
 
       .experience-card p {
-        color: #000000;
+        color: var(--text-dark);
         line-height: 1.8;
+        font-family: var(--secondary-font);
+        font-weight: 300;
       }
 
       /* CTA Section */
@@ -671,15 +683,16 @@
       }
 
       .cta-btn1 {
-        background-color: var(--btn-color);
+        background-color: var(--primary-color);
         color: var(--white-color);
         padding: 12px 15px;
-        /* border: 1px solid #004369; */
+        border: none;
         border-radius: 7px;
-        font-size: 14px;
+        font-size: var(--body-size);
         cursor: pointer;
         transition: all 0.5s ease-in-out;
         font-weight: 600;
+        font-family: var(--primary-font);
         margin-top: var(--m40);
         width: 150px;
         position: relative;
@@ -711,7 +724,7 @@
       /* Reviews Section */
       .reviews {
         padding: 6rem 0;
-        background: #e9ecef;
+        background: var(--light-gray);
       }
 
       .reviews-carousel {
@@ -836,8 +849,8 @@
 
       /* About Section */
       .about-section {
-        padding: 100px 0;
-        background-color: var(--background-light);
+        padding: 30px 0;
+        /* background-color: var(--background-light); */
       }
 
       .about-content {
@@ -905,7 +918,7 @@
           url("Side-view-aerial-look-at-dock-scaled.jpg");
         background-size: cover;
         background-position: center;
-        background-attachment: scroll; /* Removed parallax effect */
+        background-attachment: scroll;
         display: flex;
         align-items: center;
       }
@@ -1009,33 +1022,33 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
 
-       .attraction-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    }
+      .attraction-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
 
-    .attraction-card img {
-      transition: all 0.5s ease;
-    }
+      .attraction-card img {
+        transition: all 0.5s ease;
+      }
 
-    /* Apply filter to all images by default when attractions-grid is in hover state */
-    .attractions-grid:hover .attraction-card img,
-    .attractions-grid.hover-active .attraction-card img {
-      filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
-      /* transform: scale(0.95); */
-    }
+      /* Apply filter to all images by default when attractions-grid is in hover state */
+      .attractions-grid:hover .attraction-card img,
+      .attractions-grid.hover-active .attraction-card img {
+        filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+        /* transform: scale(0.95); */
+      }
 
-    /* Remove filter from the hovered image */
-    .attraction-card:hover img {
-      filter: none !important;
-      transform: scale(1.05);
-    }
+      /* Remove filter from the hovered image */
+      .attraction-card:hover img {
+        filter: none !important;
+        transform: scale(1.05);
+      }
 
-    /* Active touch state for mobile */
-    .attraction-card.active-touch img {
-      filter: none !important;
-      transform: scale(1.05);
-    }
+      /* Active touch state for mobile */
+      .attraction-card.active-touch img {
+        filter: none !important;
+        transform: scale(1.05);
+      }
 
       .attraction-card.dining {
         background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
@@ -1231,7 +1244,7 @@
               <form class="Search-bar">
                 <div class="row">
                   <div class="form-group col-3 custom-location-dropdown px-4">
-                    <label for="locations">Booking Option</label><br />
+                    <label for="locations">Locations</label><br />
                     <div class="dropdown-box custom-select">
                       <select
                         name="location"
@@ -1336,8 +1349,11 @@
     <section class="properties">
       <div class="container">
         <p class="badge-property">
-          <i class="fas fa-shield-alt" style="color: var(--btn-color); font-size: 1.2rem;"></i> Best Rates Guaranteed when Booking
-          Direct
+          <i
+            class="fas fa-shield-alt"
+            style="color: var(--btn-color); font-size: 1.2rem"
+          ></i>
+          Best Rates Guaranteed when Booking Direct
         </p>
         <h2 class="section-title">Unique homes, outstanding destinations</h2>
         <p class="section-subtitle">
@@ -1437,6 +1453,126 @@
             ></div>
             <p class="name text-white">3-bedroom (sleeps up to 7 guests)</p>
           </div>
+          <div class="property-card">
+            <img
+              src="WhatsApp Image 2025-08-21 at 6.55.54 PM.jpeg"
+              alt="St. Martin Property"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.5)
+                );
+                z-index: 1;
+              "
+            ></div>
+            <p class="name text-white">3-bedroom (sleeps up to 7 guests)</p>
+          </div>
+          <div class="property-card">
+            <img
+              src="WhatsApp Image 2025-08-21 at 6.55.54 PM.jpeg"
+              alt="St. Martin Property"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.5)
+                );
+                z-index: 1;
+              "
+            ></div>
+            <p class="name text-white">3-bedroom (sleeps up to 7 guests)</p>
+          </div>
+          <div class="property-card">
+            <img
+              src="WhatsApp Image 2025-08-21 at 6.55.54 PM.jpeg"
+              alt="St. Martin Property"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.5)
+                );
+                z-index: 1;
+              "
+            ></div>
+            <p class="name text-white">3-bedroom (sleeps up to 7 guests)</p>
+          </div>
+          <div class="property-card">
+            <img
+              src="WhatsApp Image 2025-08-21 at 6.55.54 PM.jpeg"
+              alt="St. Martin Property"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+              "
+            />
+            <div
+              style="
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: linear-gradient(
+                  rgba(0, 0, 0, 0.3),
+                  rgba(0, 0, 0, 0.5)
+                );
+                z-index: 1;
+              "
+            ></div>
+            <p class="name text-white">3-bedroom (sleeps up to 7 guests)</p>
+          </div>
         </div>
       </div>
 
@@ -1454,7 +1590,201 @@
         </div>
       </div>
     </section>
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <div style="font-weight: bold; font-size: 1.5rem">About Us</div>
+            <h2 class="dynalight-regular">where nature meets luxury</h2>
 
+            <p>
+              Unwind at Ole Ike Bay. Our Home was created to be a place of
+              restoration, and relaxation, free of unnecessary clutter.
+            </p>
+            <p>
+              Experience the joys of recharging in nature without compromising
+              any comfort. The Manor House features outdoor dinning, outdoor
+              lounge chairs, kayaks, private beach, private dock and also
+              beautiful large verandas that wrap around this Manor House.
+            </p>
+            <a href="/our-team.html" class="learn-more">
+              more about our amazing team <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="about-illustration">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt=""
+              class="img-fluid"
+              style="height: 450px; border-radius: 15px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="properties1-section" id="properties">
+      <div class="container">
+        <div class="section1-header">
+          <h2 class="section1-title">Our Properties</h2>
+          <p class="section1-subtitle">
+            Where you stay matters; enjoy our hand-picked selection of places to
+            stay in and around Bentonville, AR,
+          </p>
+
+          <p class="section1-subtitle">
+            that gives you access to world-class Mountain Biking, incredible
+            dining, small-town charm, and more! From luxury to affordability
+            find your base camp in Northwest Arkansas today!
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="property1-card">
+              <div class="property1-image">
+                <img
+                  src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                  alt="The Guesthouse"
+                />
+              </div>
+              <div class="property1-content">
+                <h3 class="property1-title">The Guesthouse</h3>
+                <p class="property1-description">
+                  Modern & Stylish Woodland Escape with Hot Tub and Treetop
+                  Views
+                </p>
+                <p class="property1-price">Starting at $278 / night</p>
+                <div class="property1-details">
+                  <div class="property1-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bentonville, Arkansas</span>
+                  </div>
+                </div>
+                <div
+                  class="property1-details mt-3"
+                  style="
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                    padding-top: 15px;
+                  "
+                >
+                  <div class="property1-detail">
+                    <i class="fas fa-users"></i>
+                    <span>6 guests</span>
+                  </div>
+                  <div class="property1-detail">
+                    <i class="fas fa-bed"></i>
+                    <span>3 beds</span>
+                  </div>
+                  <div class="property1-detail">
+                    <i class="fas fa-bath"></i>
+                    <span>2 baths</span>
+                  </div>
+                </div>
+                <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="property1-card">
+              <div class="property1-image">
+                <img
+                  src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                  alt="Eclectic Retreat"
+                />
+              </div>
+              <div class="property1-content">
+                <h3 class="property1-title">Eclectic Retreat</h3>
+                <p class="property1-description">
+                  Modern & Stylish Woodland Escape with Hot Tub and Treetop
+                  Views
+                </p>
+                <p class="property1-price">Starting at $278 / night</p>
+                <div class="property1-details">
+                  <div class="property1-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bentonville, Arkansas</span>
+                  </div>
+                </div>
+                <div
+                  class="property1-details mt-3"
+                  style="
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                    padding-top: 15px;
+                  "
+                >
+                  <div class="property1-detail">
+                    <i class="fas fa-users"></i>
+                    <span>6 guests</span>
+                  </div>
+                  <div class="property1-detail">
+                    <i class="fas fa-bed"></i>
+                    <span>3 beds</span>
+                  </div>
+                  <div class="property1-detail">
+                    <i class="fas fa-bath"></i>
+                    <span>2 baths</span>
+                  </div>
+                </div>
+                <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="property1-card">
+              <div class="property1-image">
+                <img
+                  src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                  alt="7th St. Trailhead"
+                />
+              </div>
+              <div class="property1-content">
+                <h3 class="property1-title">7th St. Trailhead</h3>
+                <p class="property1-description">
+                  Classic Farmhouse Charm with Gym, Music Den & Natural Views
+                </p>
+                <p class="property1-price">Starting at $229 / night</p>
+                <div class="property1-details">
+                  <div class="property1-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bentonville, Arkansas</span>
+                  </div>
+                </div>
+                <div
+                  class="property1-details mt-3"
+                  style="
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                    padding-top: 15px;
+                  "
+                >
+                  <div class="property1-detail">
+                    <i class="fas fa-users"></i>
+                    <span>6 guests</span>
+                  </div>
+                  <div class="property1-detail">
+                    <i class="fas fa-bed"></i>
+                    <span>3 beds</span>
+                  </div>
+                  <div class="property1-detail">
+                    <i class="fas fa-bath"></i>
+                    <span>1.5 baths</span>
+                  </div>
+                </div>
+                <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <button class="main-btn cta-btn">
+            View All Properties <i class="fas fa-arrow-right ms-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
     <!-- Experience Section -->
     <section class="experience">
       <div class="container">
@@ -1529,7 +1859,7 @@
     <!-- CTA Section -->
     <section class="container">
       <div class="cta">
-        <h2>
+        <h2 class="text-white">
           Reach out to our trip designers and let us tailor your dream getaway
         </h2>
         <a href="/enquiry-form.html"
@@ -1538,39 +1868,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <div style="font-weight: bold; font-size: 1.5rem">About Us</div>
-            <h2 class="dynalight-regular">where nature meets luxury</h2>
-
-            <p>
-              Unwind at Ole Ike Bay. Our Home was created to be a place of
-              restoration, and relaxation, free of unnecessary clutter.
-            </p>
-            <p>
-              Experience the joys of recharging in nature without compromising
-              any comfort. The Manor House features outdoor dinning, outdoor
-              lounge chairs, kayaks, private beach, private dock and also
-              beautiful large verandas that wrap around this Manor House.
-            </p>
-            <a href="/our-team.html" class="learn-more">
-              more about our amazing team <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-          <div class="about-illustration">
-            <img
-              src="Side-view-aerial-look-at-dock-scaled.jpg"
-              alt=""
-              class="img-fluid"
-              style="height: 450px; border-radius: 15px"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- Reviews Section -->
     <section class="reviews">
       <div class="container">
@@ -1704,7 +2001,7 @@
                   <path d="M14 2v6l3-3m0 6l-3-3"></path>
                 </svg>
               </div>
-              <h3>Best Rates</h3>
+              <h3 class="text-white">Best Rates</h3>
             </div>
 
             <div class="benefit-item">
@@ -1722,7 +2019,7 @@
                   ></path>
                 </svg>
               </div>
-              <h3>Relationship Building</h3>
+              <h3 class="text-white">Relationship Building</h3>
             </div>
 
             <div class="benefit-item">
@@ -1738,7 +2035,7 @@
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                 </svg>
               </div>
-              <h3>Client Care</h3>
+              <h3 class="text-white">Client Care</h3>
             </div>
           </div>
 
@@ -1834,9 +2131,12 @@
         </div>
       </div>
     </section>
-<!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-e76b9ce9-2fad-4add-82ff-f0335bddba28" data-elfsight-app-lazy></div>
+    <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div
+      class="elfsight-app-e76b9ce9-2fad-4add-82ff-f0335bddba28"
+      data-elfsight-app-lazy
+    ></div>
     <!-- Include Footer -->
     <div id="footer-placeholder"></div>
     <!-- Bootstrap JS Bundle with Popper -->

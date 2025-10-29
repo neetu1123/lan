@@ -1,0 +1,52 @@
+/* Blog Responsive CSS */
+@media (max-width: 1200px) {
+    .blog-content h4 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 991px) {
+    .blog-wrapper {
+        padding: 60px 0;
+    }
+    
+    .home-blog-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog-wrapper {
+        padding: 40px 0;
+    }
+    
+    .blog-page {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .blog-feat {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 575px) {
+    .blog-content h4 {
+        font-size: 16px;
+    }
+    
+    .blog-content {
+        padding: 15px;
+    }
+    
+    .home-blog-image {
+        height: 180px;
+    }
+    
+    .main-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
