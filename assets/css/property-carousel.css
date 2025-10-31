@@ -1,0 +1,68 @@
+.property-carousel {
+    position: relative;
+    padding: 20px 0;
+    margin: 30px 0;
+}
+
+.property-carousel .swiper-container {
+    padding: 20px 10px 50px;
+}
+
+.property-carousel .swiper-slide {
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.property-carousel .property1-card {
+    height: 100%;
+    margin: 0;
+}
+
+.property-carousel .swiper-button-next,
+.property-carousel .swiper-button-prev {
+    color: var(--btn-color);
+    background: var(--white-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.property-carousel .swiper-button-next:after,
+.property-carousel .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.property-carousel .swiper-button-next:hover,
+.property-carousel .swiper-button-prev:hover {
+    background: var(--btn-color);
+    color: var(--white-color);
+    transform: scale(1.1);
+}
+
+.property-carousel .swiper-pagination {
+    bottom: 10px;
+}
+
+.property-carousel .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: var(--btn-color);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.property-carousel .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+    background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .property-carousel .swiper-button-next,
+    .property-carousel .swiper-button-prev {
+        display: none;
+    }
+}

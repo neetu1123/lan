@@ -28,9 +28,8 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/property-carousel.css" />
     <style>
-      
-
       * {
         margin: 0;
         padding: 0;
@@ -149,7 +148,7 @@
       }
 
       /* Sidebar Styles */
-    
+
       /* Hero Section */
       .hero {
         height: 85vh;
@@ -352,7 +351,7 @@
       /* Properties Section */
       .properties1-section {
         padding-bottom: 100px;
-        margin-top: 100px;
+        /* margin-top: 100px; */
         padding-top: 2rem;
         background: var(--background-light);
       }
@@ -443,6 +442,9 @@
         display: flex;
         align-items: center;
         gap: 8px;
+      }
+       .property1-detail i{
+       color: var(--primary-color);
       }
 
       /* Properties Section */
@@ -683,7 +685,7 @@
       }
 
       .cta-btn1 {
-        background-color: var(--primary-color);
+        background-color: var(--btn-color);
         color: var(--white-color);
         padding: 12px 15px;
         border: none;
@@ -822,7 +824,7 @@
 
       .swiper-button-next:hover,
       .swiper-button-prev:hover {
-        background: var(--btn-hover-color);
+        background: var(--btn-color);
         color: white;
         transform: scale(1.1);
         box-shadow: 0 10px 30px rgba(15, 94, 128, 0.3);
@@ -1225,6 +1227,68 @@
         font-weight: 700;
         color: black;
       }
+         .service-card {
+        text-align: center;
+        padding: 40px 10px 10px 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        background: var(--text-light);
+        transition: transform 0.3s ease;
+        /*margin-bottom: 30px;*/
+        height: 100%;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 30px;
+       
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .service-icon  img{
+        font-size: 2.2rem;
+        color: var(--btn-color);
+      }
+
+      .service-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 20px;
+        line-height: 1.3;
+      }
+
+      .service-text {
+        color: var(--grey-dark);
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+      }
+
+      .learn-more-btn {
+        color: var(--highlight-bg);
+        text-decoration: none;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .learn-more-btn:hover {
+        color: var(--primary-accent);
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
@@ -1252,16 +1316,19 @@
                         class="styled-select"
                       >
                         <option value="" disabled>
-                          Choose as per your preference
+                          Any location
                         </option>
                         <option value="bedroom-4" selected>
-                          4-bedroom (sleeps up to 9 guests)
+                         Davenport
                         </option>
                         <option value="bedroom-3">
-                          3-bedroom (sleeps up to 6 guests)
+Four Corners
                         </option>
                         <option value="bedroom-2">
-                          2-bedroom (sleeps up to 4 guests)
+                          Kissimmee
+                        </option>
+                        <option value="bedroom-2">
+                          Orlando
                         </option>
                       </select>
                     </div>
@@ -1344,8 +1411,351 @@
         </div>
       </div>
     </section>
+  <!-- Properties details Section -->
+    <section class="properties1-section" id="properties">
+      <div class="container">
+        <div class="section1-header">
+          <h2 class="section1-title">Our Properties</h2>
+          <p class="section1-subtitle">
+            Where you stay matters; enjoy our hand-picked selection of places to
+            stay in and around Bentonville, AR,
+          </p>
+          <p class="section1-subtitle">
+            that gives you access to world-class Mountain Biking, incredible
+            dining, small-town charm, and more! From luxury to affordability
+            find your base camp in Northwest Arkansas today!
+          </p>
+        </div>
 
-    <!-- Properties Section -->
+        <div class="property-carousel">
+          <div class="swiper" id="propertySwiper">
+            <div class="swiper-wrapper">
+              <!-- Card 1 -->
+              <div class="swiper-slide">
+                <div class="property1-card">
+                  <div class="property1-image">
+                    <img
+                      src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                      alt="The Guesthouse"
+                    />
+                  </div>
+                  <div class="property1-content">
+                    <h3 class="property1-title">The Guesthouse</h3>
+                    <p class="property1-description">
+                      Modern & Stylish Woodland Escape with Hot Tub and Treetop
+                      Views
+                    </p>
+                    <p class="property1-price">Starting at $278 / night</p>
+                    <div class="property1-details">
+                      <div class="property1-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bentonville, Arkansas</span>
+                      </div>
+                    </div>
+                    <div
+                      class="property1-details mt-3"
+                      style="
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        padding-top: 15px;
+                      "
+                    >
+                      <div class="property1-detail">
+                        <i class="fas fa-users"></i>
+                        <span>6 guests</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bed"></i>
+                        <span>3 beds</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bath"></i>
+                        <span>2 baths</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="swiper-slide">
+                <div class="property1-card">
+                  <div class="property1-image">
+                    <img
+                      src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                      alt="Eclectic Retreat"
+                    />
+                  </div>
+                  <div class="property1-content">
+                    <h3 class="property1-title">Eclectic Retreat</h3>
+                    <p class="property1-description">
+                      Modern & Stylish Woodland Escape with Hot Tub and Treetop
+                      Views
+                    </p>
+                    <p class="property1-price">Starting at $278 / night</p>
+                    <div class="property1-details">
+                      <div class="property1-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bentonville, Arkansas</span>
+                      </div>
+                    </div>
+                    <div
+                      class="property1-details mt-3"
+                      style="
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        padding-top: 15px;
+                      "
+                    >
+                      <div class="property1-detail">
+                        <i class="fas fa-users"></i>
+                        <span>6 guests</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bed"></i>
+                        <span>3 beds</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bath"></i>
+                        <span>2 baths</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="swiper-slide">
+                <div class="property1-card">
+                  <div class="property1-image">
+                    <img
+                      src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                      alt="7th St. Trailhead"
+                    />
+                  </div>
+                  <div class="property1-content">
+                    <h3 class="property1-title">7th St. Trailhead</h3>
+                    <p class="property1-description">
+                      Classic Farmhouse Charm with Gym, Music Den & Natural
+                      Views
+                    </p>
+                    <p class="property1-price">Starting at $229 / night</p>
+                    <div class="property1-details">
+                      <div class="property1-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bentonville, Arkansas</span>
+                      </div>
+                    </div>
+                    <div
+                      class="property1-details mt-3"
+                      style="
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        padding-top: 15px;
+                      "
+                    >
+                      <div class="property1-detail">
+                        <i class="fas fa-users"></i>
+                        <span>6 guests</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bed"></i>
+                        <span>3 beds</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bath"></i>
+                        <span>1.5 baths</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="swiper-slide">
+                <div class="property1-card">
+                  <div class="property1-image">
+                    <img
+                      src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                      alt="Mountain View Lodge"
+                    />
+                  </div>
+                  <div class="property1-content">
+                    <h3 class="property1-title">Mountain View Lodge</h3>
+                    <p class="property1-description">
+                      Scenic Mountain Views with Modern Amenities and Outdoor
+                      Space
+                    </p>
+                    <p class="property1-price">Starting at $299 / night</p>
+                    <div class="property1-details">
+                      <div class="property1-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bentonville, Arkansas</span>
+                      </div>
+                    </div>
+                    <div
+                      class="property1-details mt-3"
+                      style="
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        padding-top: 15px;
+                      "
+                    >
+                      <div class="property1-detail">
+                        <i class="fas fa-users"></i>
+                        <span>8 guests</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bed"></i>
+                        <span>4 beds</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bath"></i>
+                        <span>3 baths</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="swiper-slide">
+                <div class="property1-card">
+                  <div class="property1-image">
+                    <img
+                      src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                      alt="Lakeside Retreat"
+                    />
+                  </div>
+                  <div class="property1-content">
+                    <h3 class="property1-title">Lakeside Retreat</h3>
+                    <p class="property1-description">
+                      Peaceful Lakefront Property with Private Dock and Water
+                      Views
+                    </p>
+                    <p class="property1-price">Starting at $349 / night</p>
+                    <div class="property1-details">
+                      <div class="property1-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bentonville, Arkansas</span>
+                      </div>
+                    </div>
+                    <div
+                      class="property1-details mt-3"
+                      style="
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        padding-top: 15px;
+                      "
+                    >
+                      <div class="property1-detail">
+                        <i class="fas fa-users"></i>
+                        <span>10 guests</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bed"></i>
+                        <span>5 beds</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bath"></i>
+                        <span>3.5 baths</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="swiper-slide">
+                <div class="property1-card">
+                  <div class="property1-image">
+                    <img
+                      src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
+                      alt="Urban Loft"
+                    />
+                  </div>
+                  <div class="property1-content">
+                    <h3 class="property1-title">Urban Loft</h3>
+                    <p class="property1-description">
+                      Modern Downtown Living with City Views and Entertainment
+                    </p>
+                    <p class="property1-price">Starting at $259 / night</p>
+                    <div class="property1-details">
+                      <div class="property1-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Downtown Bentonville</span>
+                      </div>
+                    </div>
+                    <div
+                      class="property1-details mt-3"
+                      style="
+                        border-top: 1px solid rgba(0, 0, 0, 0.1);
+                        padding-top: 15px;
+                      "
+                    >
+                      <div class="property1-detail">
+                        <i class="fas fa-users"></i>
+                        <span>4 guests</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bed"></i>
+                        <span>2 beds</span>
+                      </div>
+                      <div class="property1-detail">
+                        <i class="fas fa-bath"></i>
+                        <span>2 baths</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <button class="main-btn cta-btn">
+            View All Properties <i class="fas fa-arrow-right ms-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-text">
+            <div style="font-weight: bold; font-size: 1.5rem">About Us</div>
+            <h2 class="dynalight-regular">where nature meets luxury</h2>
+
+            <p>
+              Unwind at Ole Ike Bay. Our Home was created to be a place of
+              restoration, and relaxation, free of unnecessary clutter.
+            </p>
+            <p>
+              Experience the joys of recharging in nature without compromising
+              any comfort. The Manor House features outdoor dinning, outdoor
+              lounge chairs, kayaks, private beach, private dock and also
+              beautiful large verandas that wrap around this Manor House.
+            </p>
+            <a href="/our-team.html" class="learn-more">
+              more about our amazing team <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="about-illustration">
+            <img
+              src="Side-view-aerial-look-at-dock-scaled.jpg"
+              alt=""
+              class="img-fluid"
+              style="height: 450px; border-radius: 15px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- Properties Section -->
     <section class="properties">
       <div class="container">
         <p class="badge-property">
@@ -1355,10 +1765,10 @@
           ></i>
           Best Rates Guaranteed when Booking Direct
         </p>
-        <h2 class="section-title">Unique homes, outstanding destinations</h2>
+        <h2 class="section-title">Find your dream
+Vacation Rental</h2>
         <p class="section-subtitle">
-          Welcome to Ole Ike Bay, your gateway to elegance in the most
-          sought-after locations in the Caribbean
+         Discover your ideal vacation rental with 88 Vacation Homes! Explore our diverse selection of luxurious properties in Orlando, perfect for creating unforgettable memories with family and friends.
         </p>
 
         <div class="properties-grid">
@@ -1590,269 +2000,70 @@
         </div>
       </div>
     </section>
-    <!-- About Section -->
-    <section class="about-section">
-      <div class="container">
-        <div class="about-content">
-          <div class="about-text">
-            <div style="font-weight: bold; font-size: 1.5rem">About Us</div>
-            <h2 class="dynalight-regular">where nature meets luxury</h2>
 
-            <p>
-              Unwind at Ole Ike Bay. Our Home was created to be a place of
-              restoration, and relaxation, free of unnecessary clutter.
-            </p>
-            <p>
-              Experience the joys of recharging in nature without compromising
-              any comfort. The Manor House features outdoor dinning, outdoor
-              lounge chairs, kayaks, private beach, private dock and also
-              beautiful large verandas that wrap around this Manor House.
-            </p>
-            <a href="/our-team.html" class="learn-more">
-              more about our amazing team <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-          <div class="about-illustration">
-            <img
-              src="Side-view-aerial-look-at-dock-scaled.jpg"
-              alt=""
-              class="img-fluid"
-              style="height: 450px; border-radius: 15px"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Properties Section -->
-    <section class="properties1-section" id="properties">
-      <div class="container">
-        <div class="section1-header">
-          <h2 class="section1-title">Our Properties</h2>
-          <p class="section1-subtitle">
-            Where you stay matters; enjoy our hand-picked selection of places to
-            stay in and around Bentonville, AR,
-          </p>
-
-          <p class="section1-subtitle">
-            that gives you access to world-class Mountain Biking, incredible
-            dining, small-town charm, and more! From luxury to affordability
-            find your base camp in Northwest Arkansas today!
-          </p>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="property1-card">
-              <div class="property1-image">
-                <img
-                  src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
-                  alt="The Guesthouse"
-                />
-              </div>
-              <div class="property1-content">
-                <h3 class="property1-title">The Guesthouse</h3>
-                <p class="property1-description">
-                  Modern & Stylish Woodland Escape with Hot Tub and Treetop
-                  Views
-                </p>
-                <p class="property1-price">Starting at $278 / night</p>
-                <div class="property1-details">
-                  <div class="property1-detail">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Bentonville, Arkansas</span>
-                  </div>
-                </div>
-                <div
-                  class="property1-details mt-3"
-                  style="
-                    border-top: 1px solid rgba(0, 0, 0, 0.1);
-                    padding-top: 15px;
-                  "
-                >
-                  <div class="property1-detail">
-                    <i class="fas fa-users"></i>
-                    <span>6 guests</span>
-                  </div>
-                  <div class="property1-detail">
-                    <i class="fas fa-bed"></i>
-                    <span>3 beds</span>
-                  </div>
-                  <div class="property1-detail">
-                    <i class="fas fa-bath"></i>
-                    <span>2 baths</span>
-                  </div>
-                </div>
-                <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="property1-card">
-              <div class="property1-image">
-                <img
-                  src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
-                  alt="Eclectic Retreat"
-                />
-              </div>
-              <div class="property1-content">
-                <h3 class="property1-title">Eclectic Retreat</h3>
-                <p class="property1-description">
-                  Modern & Stylish Woodland Escape with Hot Tub and Treetop
-                  Views
-                </p>
-                <p class="property1-price">Starting at $278 / night</p>
-                <div class="property1-details">
-                  <div class="property1-detail">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Bentonville, Arkansas</span>
-                  </div>
-                </div>
-                <div
-                  class="property1-details mt-3"
-                  style="
-                    border-top: 1px solid rgba(0, 0, 0, 0.1);
-                    padding-top: 15px;
-                  "
-                >
-                  <div class="property1-detail">
-                    <i class="fas fa-users"></i>
-                    <span>6 guests</span>
-                  </div>
-                  <div class="property1-detail">
-                    <i class="fas fa-bed"></i>
-                    <span>3 beds</span>
-                  </div>
-                  <div class="property1-detail">
-                    <i class="fas fa-bath"></i>
-                    <span>2 baths</span>
-                  </div>
-                </div>
-                <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="property1-card">
-              <div class="property1-image">
-                <img
-                  src="WhatsApp Image 2025-08-21 at 6.55.12 PM.jpeg"
-                  alt="7th St. Trailhead"
-                />
-              </div>
-              <div class="property1-content">
-                <h3 class="property1-title">7th St. Trailhead</h3>
-                <p class="property1-description">
-                  Classic Farmhouse Charm with Gym, Music Den & Natural Views
-                </p>
-                <p class="property1-price">Starting at $229 / night</p>
-                <div class="property1-details">
-                  <div class="property1-detail">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Bentonville, Arkansas</span>
-                  </div>
-                </div>
-                <div
-                  class="property1-details mt-3"
-                  style="
-                    border-top: 1px solid rgba(0, 0, 0, 0.1);
-                    padding-top: 15px;
-                  "
-                >
-                  <div class="property1-detail">
-                    <i class="fas fa-users"></i>
-                    <span>6 guests</span>
-                  </div>
-                  <div class="property1-detail">
-                    <i class="fas fa-bed"></i>
-                    <span>3 beds</span>
-                  </div>
-                  <div class="property1-detail">
-                    <i class="fas fa-bath"></i>
-                    <span>1.5 baths</span>
-                  </div>
-                </div>
-                <!-- <a href="#" class="view-property-btn">View Details <i class="fas fa-arrow-right ms-1"></i></a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="text-center mt-5">
-          <button class="main-btn cta-btn">
-            View All Properties <i class="fas fa-arrow-right ms-2"></i>
-          </button>
-        </div>
-      </div>
-    </section>
+    
     <!-- Experience Section -->
     <section class="experience">
       <div class="container">
         <h2 class="section-title">The Ole Ike Bay experience</h2>
 
-        <div class="experience-grid">
-          <div class="experience-card">
-            <div class="experience-icon">
-              <img src="65b89c7ecd147.webp" alt="" class="text-black" />
+         <div class="row mt-5 d-none d-md-flex">
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card fade-in">
+              <div class="service-icon">
+                 <img src="65b89c7ecd147.webp" />
+              </div>
+              <h3 class="service-title">
+              Expertly cleaned & disinfected<br />
+              </h3>
+              <p class="service-text">
+              Professionally cleaned and disinfected before every stay for your safety and comfort.
+              </p>
+             
             </div>
-            <h3>Curated collection</h3>
-            <p>
-              Enjoy a haven of luxury living with our thoughtfully curated villa
-              selection.
-            </p>
           </div>
 
-          <div class="experience-card">
-            <div class="experience-icon">
-              <img src="65d39d8dcbccb.webp" alt="" class="text-black" />
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card fade-in">
+              <div class="service-icon">
+                <img src="65b89c7ecd147.webp" />
+              </div>
+              <h3 class="service-title">
+               Worry-free cancellation
+              </h3>
+              <p class="service-text">
+              Flexible cancellation options for peace of mind when plans change.
+              </p>
+            
             </div>
-            <h3>Remarkable locations</h3>
-            <p>
-              Explore the hidden gems of the Caribbean in our stunning
-              locations.
-            </p>
           </div>
 
-          <div class="experience-card">
-            <div class="experience-icon">
-              <img src="65d39d677dd69.webp" alt="" class="text-black" />
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card fade-in">
+              <div class="service-icon">
+                 <img src="65b89c7ecd147.webp" />
+              </div>
+              <h3 class="service-title">Price match guarantee</h3>
+              <p class="service-text">
+                Found a lower price? We’ll match it—guaranteed. </p>
+             
             </div>
-            <h3>Confidentiality</h3>
-            <p>Ensure your privacy with the discreet service from our staff.</p>
           </div>
+             <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card fade-in">
+              <div class="service-icon">
+                 <img src="65b89c7ecd147.webp" />
+              </div>
+              <h3 class="service-title">Self check-in with keyless</h3>
+              <p class="service-text">
+               Check in anytime with secure, keyless entry.
 
-          <div class="experience-card">
-            <div class="experience-icon">
-              <img src="65d39daab692a.webp" alt="" class="text-black" />
+    </p>
+             
             </div>
-            <h3>Luxury amenities</h3>
-            <p>
-              Savor the lavish comforts of world-class amenities at your
-              fingertips.
-            </p>
-          </div>
-
-          <div class="experience-card">
-            <div class="experience-icon">
-              <img src="65d39dd57a01e.webp" alt="" class="text-black" />
-            </div>
-            <h3>Trip designers</h3>
-            <p>
-              Immerse yourself in your dream holidays with our expert touch.
-            </p>
-          </div>
-
-          <div class="experience-card">
-            <div class="experience-icon">
-              <img src="65d39d343d38e.webp" alt="" class="text-black" />
-            </div>
-            <h3>Local expertise</h3>
-            <p>
-              Embark on a journey of discovery with our seasoned local
-              specialists.
-            </p>
           </div>
         </div>
+     
       </div>
     </section>
 
@@ -2173,6 +2384,46 @@
             input.value = Math.max(0, value - 1);
           }
         });
+      });
+
+      // Initialize Swiper for Properties
+      const propertySwiper = new Swiper("#propertySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+        effect: "slide",
+        speed: 800,
+        observer: true,
+        observeParents: true,
+        watchOverflow: true,
       });
 
       // Initialize Swiper for Reviews
